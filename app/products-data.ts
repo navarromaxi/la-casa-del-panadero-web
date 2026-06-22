@@ -297,21 +297,91 @@ export const categoryDetails: Record<string, CategoryDetails> = {
   },
   armadoras: {
     intro:
-      'Página preparada para armadoras pensadas para mejorar el formado y la repetibilidad de piezas dentro de la línea de producción.',
+      'Dentro de esta subcategoría hoy presentamos una solución automática para formado de piezas de panadería, pensada para ganar ritmo, estandarización y flexibilidad en líneas de producción.',
     bullets: [
       'Formado más uniforme',
       'Ritmo de trabajo sostenido',
       'Asesoramiento según tipo de pieza',
     ],
+    featuredProduct: {
+      name: 'Línea automática de formado',
+      brand: 'VBS',
+      model: 'CB',
+      image: '/armadora-de-pan.jpg',
+      imageAlt: 'Armadora automática de pan VBS CB',
+      badge: 'Producto destacado',
+      shortDescription:
+        'Máquina modular con integrado automático orientada a la producción de ciabatta, zoccoletti, grisines y productos estampados, con estructura pensada para líneas exigentes.',
+      capacities: ['20 g a 2 kg', 'Línea modular', 'Formado automático'],
+      highlights: [
+        'Permite trabajar distintos tipos de productos con una sola línea de producción.',
+        'Admite formatos pequeños y medianos, desde grisines hasta piezas de mayor peso.',
+        'Puede personalizarse con accesorios para adaptar el flujo de trabajo a cada obrador.',
+      ],
+      description: [
+        'La línea VBS CB fue desarrollada para automatizar procesos de formado dentro de producciones panaderas que requieren mayor continuidad y estandarización.',
+        'La ficha original la presenta como una máquina modular de acero inoxidable, capaz de producir diferentes formatos como ciabatta, grisines, zoccoletti y piezas estampadas.',
+        'Su estructura admite ampliaciones y accesorios para adaptar la línea a necesidades concretas de carga, distribución, corte y salida de producto.',
+      ],
+      specsTitle: 'Características principales',
+      specs: [
+        'Línea automática modular para formado de piezas.',
+        'Construcción interior en acero inoxidable.',
+        'Capacidad de trabajo aproximada desde 20 g hasta 2 kg según producto.',
+        'Apta para ciabatta, grisines, zoccoletti y piezas estampadas.',
+        'Configuración expandible con accesorios y módulos adicionales.',
+      ],
+      notesTitle: 'Opcionales y aplicaciones',
+      notes: [
+        'Puede incorporar accesorios como tolvas, distribuidores, cargadores y descargas automáticas.',
+        'Pensada para producciones que buscan estandarizar piezas y mejorar ritmo operativo.',
+        'Consulta recomendada para definir configuración según tipo de producto y volumen de línea.',
+      ],
+    },
   },
   'cortadoras-de-pan': {
     intro:
-      'Página preparada para cortadoras de pan con foco en velocidad, seguridad y corte parejo para despacho o exhibición.',
+      'Dentro de esta subcategoría hoy presentamos una línea de cortadoras de pan orientada a panaderías, supermercados y obradores que necesitan corte rápido, parejo y seguro en ritmo comercial.',
     bullets: [
       'Corte prolijo y repetitivo',
       'Uso en panadería y retail',
       'Consulta por formato de pan y capacidad',
     ],
+    featuredProduct: {
+      name: 'Cortadora de pan',
+      brand: 'JAC',
+      model: 'Línea industrial',
+      image: '/cortadora-jac.jpeg',
+      imageAlt: 'Cortadora de pan JAC',
+      badge: 'Producto destacado',
+      shortDescription:
+        'Equipo pensado para optimizar el rebanado en panaderías y confiterías, con corte preciso, estructura robusta y funcionamiento orientado a producción continua.',
+      capacities: ['Corte preciso', 'Uso industrial', 'Seguridad integrada'],
+      highlights: [
+        'Mecanismo automático para lograr rebanadas uniformes y prolijas.',
+        'Construcción robusta preparada para trabajo comercial intensivo.',
+        'Muy útil para despacho ágil en panaderías, supermercados y puntos de venta con volumen.',
+      ],
+      description: [
+        'Las cortadoras de pan industriales permiten mejorar el ritmo de trabajo y dar una terminación más prolija al producto final en etapas de despacho o preparación.',
+        'Dentro de esta línea, La Casa del Panadero trabaja marcas reconocidas como JAC, orientadas a panificadoras comerciales que buscan velocidad, precisión y seguridad de uso.',
+        'La elección del modelo depende del tipo de pan, el volumen de corte y si se busca una solución de mesa o una cortadora de pie automática.',
+      ],
+      specsTitle: 'Características principales',
+      specs: [
+        'Corte parejo con espesor uniforme.',
+        'Equipo pensado para uso industrial y comercial.',
+        'Estructura robusta con materiales duraderos.',
+        'Sistemas de seguridad integrados para operación diaria.',
+        'Apta para panaderías, confiterías, supermercados y obradores.',
+      ],
+      notesTitle: 'Consulta y asesoramiento',
+      notes: [
+        'Consultar modelos en stock y precios actualizados según necesidad.',
+        'Indicar si buscás un modelo de mesa o una cortadora de pie automática.',
+        'También podés solicitar información sobre servicio técnico y respaldo postventa.',
+      ],
+    },
   },
   'grupo-croissant': {
     intro:
