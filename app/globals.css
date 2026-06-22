@@ -1076,6 +1076,115 @@ h3,
   font-weight: 800;
 }
 
+.utensilios-carousel {
+  display: grid;
+  gap: 24px;
+}
+
+.utensilios-carousel-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.utensilios-carousel-header h2 {
+  max-width: 14ch;
+}
+
+.utensilios-carousel-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.utensilios-carousel-button {
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(249, 250, 251, 0.98);
+  color: var(--ink);
+  cursor: pointer;
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    opacity 160ms ease;
+}
+
+.utensilios-carousel-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  border-color: rgba(164, 79, 57, 0.28);
+}
+
+.utensilios-carousel-button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.utensilios-carousel-track {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.utensilios-slide,
+.utensilios-info-card {
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: linear-gradient(180deg, rgba(249, 250, 251, 0.98), rgba(233, 238, 242, 0.96));
+  box-shadow: var(--shadow);
+}
+
+.utensilios-slide {
+  overflow: hidden;
+}
+
+.utensilios-slide-media {
+  padding: 20px 20px 0;
+}
+
+.utensilios-slide-placeholder {
+  display: flex;
+  align-items: end;
+  justify-content: flex-start;
+  min-height: 300px;
+  padding: 22px;
+  border-radius: 22px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(223, 228, 232, 0.92)),
+    linear-gradient(180deg, rgba(210, 109, 83, 0.08), rgba(79, 89, 99, 0.08));
+}
+
+.utensilios-slide-placeholder span {
+  font-family: var(--font-heading), sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  color: var(--ink);
+}
+
+.utensilios-slide-copy {
+  padding: 18px 22px 24px;
+}
+
+.utensilios-slide-copy strong {
+  display: block;
+  margin-bottom: 8px;
+  font-family: var(--font-heading), sans-serif;
+  font-size: 1.35rem;
+  letter-spacing: -0.03em;
+}
+
+.utensilios-slide-copy p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.utensilios-info-card {
+  max-width: 860px;
+  padding: 32px;
+}
+
 .multi-product-grid {
   display: grid;
   gap: 24px;
@@ -1206,7 +1315,8 @@ h3,
   .product-detail-layout,
   .product-description-grid,
   .special-category-grid,
-  .multi-product-card {
+  .multi-product-card,
+  .utensilios-carousel-track {
     grid-template-columns: 1fr;
   }
 
@@ -1352,6 +1462,11 @@ h3,
     margin-top: 8px;
   }
 
+  .utensilios-carousel-header {
+    align-items: start;
+    flex-direction: column;
+  }
+
   .hero {
     padding: 52px 0 36px;
   }
@@ -1403,7 +1518,8 @@ h3,
   }
 
   .product-visual-card,
-  .product-description-card {
+  .product-description-card,
+  .utensilios-info-card {
     padding: 24px;
   }
 
@@ -1480,5 +1596,9 @@ h3,
   .product-main-image {
     height: auto;
     max-height: 460px;
+  }
+
+  .utensilios-slide-placeholder {
+    min-height: 240px;
   }
 }

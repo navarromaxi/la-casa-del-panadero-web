@@ -2,7 +2,13 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowLeft, ChevronRight, MessageCircle } from 'lucide-react'
-import { categoryDetails, productCategories, productCategoryChildren } from '../../products-data'
+import {
+  categoryDetails,
+  productCategories,
+  productCategoryChildren,
+  utensiliosGalleryItems,
+} from '../../products-data'
+import { UtensiliosCarousel } from '../../utensilios-carousel'
 
 type ProductPageProps = {
   params: Promise<{
@@ -42,6 +48,7 @@ export default async function ProductCategoryPage({ params }: ProductPageProps) 
   const featuredProduct = details?.featuredProduct
   const featuredProducts = details?.featuredProducts ?? []
   const childCategories = productCategoryChildren[slug] ?? []
+  const isUtensilios = slug === 'utensilios'
 
   return (
     <main className="category-page">
@@ -57,39 +64,70 @@ export default async function ProductCategoryPage({ params }: ProductPageProps) 
         </div>
       </section>
 
-      <section className="section">
-        <div className="container category-grid">
-          <div className="category-copy">
-            <p className="eyebrow">Descripción general</p>
-            <h2>{category.name} para producción profesional</h2>
-            <p>{details.intro}</p>
-          </div>
+      {isUtensilios ? (
+        <>
+          <section className="section">
+            <div className="container">
+              <UtensiliosCarousel items={utensiliosGalleryItems} />
+            </div>
+          </section>
 
-          <div className="category-panel">
-            <p className="eyebrow">Consulta comercial</p>
-            <h3>Te asesoramos según tu producción</h3>
-            <p>
-              Si querés conocer disponibilidad, capacidades o precio, podés escribirnos y te
-              orientamos según el tipo de masa, volumen y espacio de trabajo.
-            </p>
-            <ul>
-              <li>Ventas por WhatsApp</li>
-              <li>Asesoramiento para elegir capacidad</li>
-              <li>Coordinación de presupuesto</li>
-            </ul>
-            <a
-              className="btn btn-primary"
-              href="https://wa.me/59894009370"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <MessageCircle size={18} /> Consultar este producto
-            </a>
-          </div>
-        </div>
-      </section>
+          <section className="section alt">
+            <div className="container utensilios-info-card">
+              <p className="eyebrow">Utensilios</p>
+              <h2>Accesorios y herramientas para el trabajo diario del obrador</h2>
+              <p>
+                En esta categoría reunimos utensilios de apoyo para panadería, confitería y
+                gastronomía. No listamos cada producto en la web, porque la variedad puede cambiar,
+                pero podés consultarnos directamente por el utensilio que necesitás y te orientamos
+                según uso, disponibilidad y tipo de trabajo.
+              </p>
+              <a
+                className="btn btn-primary"
+                href="https://wa.me/59894009370"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <MessageCircle size={18} /> Consultar por utensilios
+              </a>
+            </div>
+          </section>
+        </>
+      ) : (
+        <section className="section">
+          <div className="container category-grid">
+            <div className="category-copy">
+              <p className="eyebrow">Descripción general</p>
+              <h2>{category.name} para producción profesional</h2>
+              <p>{details.intro}</p>
+            </div>
 
-      {featuredProduct ? (
+            <div className="category-panel">
+              <p className="eyebrow">Consulta comercial</p>
+              <h3>Te asesoramos según tu producción</h3>
+              <p>
+                Si querés conocer disponibilidad, capacidades o precio, podés escribirnos y te
+                orientamos según el tipo de masa, volumen y espacio de trabajo.
+              </p>
+              <ul>
+                <li>Ventas por WhatsApp</li>
+                <li>Asesoramiento para elegir capacidad</li>
+                <li>Coordinación de presupuesto</li>
+              </ul>
+              <a
+                className="btn btn-primary"
+                href="https://wa.me/59894009370"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <MessageCircle size={18} /> Consultar este producto
+              </a>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {!isUtensilios && featuredProduct ? (
         <section className="section alt">
           <div className="container product-detail-layout">
             <div className="product-visual-card">
@@ -161,7 +199,7 @@ export default async function ProductCategoryPage({ params }: ProductPageProps) 
         </section>
       ) : null}
 
-      {!featuredProduct && featuredProducts.length ? (
+      {!isUtensilios && !featuredProduct && featuredProducts.length ? (
         <section className="section alt">
           <div className="container">
             <p className="eyebrow">Modelos disponibles</p>
@@ -235,7 +273,7 @@ export default async function ProductCategoryPage({ params }: ProductPageProps) 
         </section>
       ) : null}
 
-      {childCategories.length ? (
+      {!isUtensilios && childCategories.length ? (
         <section className="section alt">
           <div className="container">
             <p className="eyebrow">Accesos rápidos</p>

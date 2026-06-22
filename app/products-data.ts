@@ -29,6 +29,12 @@ export type CategoryDetails = {
   featuredProducts?: FeaturedProduct[]
 }
 
+export type GalleryItem = {
+  title: string
+  caption: string
+  image?: string
+}
+
 export const productCategories: readonly ProductCategory[] = [
   {
     slug: 'amasadoras',
@@ -99,6 +105,29 @@ export const productCategoryChildren: Record<string, ProductCategory[]> = produc
   acc[category.parentSlug].push(category)
   return acc
 }, {})
+
+export const utensiliosGalleryItems: readonly GalleryItem[] = [
+  {
+    title: 'Utensilio 01',
+    caption: 'Espacio listo para sumar una foto real del catálogo de utensilios.',
+  },
+  {
+    title: 'Utensilio 02',
+    caption: 'Podemos mostrar herramientas de uso diario para panadería y confitería.',
+  },
+  {
+    title: 'Utensilio 03',
+    caption: 'El carrusel queda preparado para rotar imágenes sin recargar la landing.',
+  },
+  {
+    title: 'Utensilio 04',
+    caption: 'Cuando tengas las fotos, simplemente reemplazamos estos espacios.',
+  },
+  {
+    title: 'Utensilio 05',
+    caption: 'También puede usarse para destacar líneas o familias de utensilios.',
+  },
+]
 
 export const categoryDetails: Record<string, CategoryDetails> = {
   amasadoras: {
@@ -528,7 +557,7 @@ export const categoryDetails: Record<string, CategoryDetails> = {
   },
   utensilios: {
     intro:
-      'Página preparada para utensilios, accesorios y complementos de uso diario en producción.',
+      'En esta sección reunimos utensilios, accesorios y complementos de uso diario para panadería, confitería y producción gastronómica.',
     bullets: [
       'Listado por tipo de utensilio',
       'Productos de apoyo para cuadra',

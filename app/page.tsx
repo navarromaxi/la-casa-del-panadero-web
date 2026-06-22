@@ -14,7 +14,7 @@ import {
 } from 'lucide-react'
 import Image from 'next/image'
 import { ContactForm } from './contact-form'
-import { productCategories } from './products-data'
+import { topLevelProductCategories } from './products-data'
 
 const brands = [
   { name: 'Bassanina Baking', src: '/bassanina-baking.png', width: 210, height: 84 },
@@ -179,7 +179,7 @@ export default function Home() {
           </p>
         </div>
         <div className="container product-grid">
-          {productCategories.map((product) => (
+          {topLevelProductCategories.map((product) => (
             <a className="product-card" key={product.slug} id={product.slug} href={`/productos/${product.slug}`}>
               <div>
                 <span>{product.name}</span>
