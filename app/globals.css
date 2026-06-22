@@ -892,9 +892,7 @@ h3,
   justify-content: center;
   min-height: 560px;
   border-radius: 24px;
-  background:
-    radial-gradient(circle at top, rgba(255, 255, 255, 0.96), rgba(232, 237, 241, 0.88)),
-    linear-gradient(180deg, rgba(223, 228, 232, 0.72), rgba(245, 247, 249, 0.92));
+  background: #fff;
 }
 
 .product-main-image {
@@ -961,12 +959,14 @@ h3,
 }
 
 .product-description-grid {
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 0.95fr 1.05fr;
   margin-top: 24px;
+  align-items: stretch;
 }
 
 .product-description-card {
   padding: 28px;
+  height: 100%;
 }
 
 .product-description-card h3 {

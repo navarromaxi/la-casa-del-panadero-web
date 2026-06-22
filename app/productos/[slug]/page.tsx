@@ -61,14 +61,6 @@ export default async function ProductCategoryPage({ params }: ProductPageProps) 
             <p className="eyebrow">Descripción general</p>
             <h2>{category.name} para producción profesional</h2>
             <p>{details.intro}</p>
-            <div className="category-list">
-              {details.bullets.map((bullet) => (
-                <div className="category-list-item" key={bullet}>
-                  <span />
-                  <p>{bullet}</p>
-                </div>
-              ))}
-            </div>
           </div>
 
           <div className="category-panel">
