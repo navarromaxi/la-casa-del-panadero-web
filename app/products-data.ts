@@ -106,12 +106,49 @@ export const categoryDetails: Record<string, CategoryDetails> = {
   },
   sobadoras: {
     intro:
-      'Página preparada para exhibir sobadoras con foco en producción, potencia y trabajo continuo.',
+      'Dentro de esta categoría hoy presentamos una sobadora pesada orientada a panadería y pastelería, preparada para trabajo continuo y regulación precisa del cilindro.',
     bullets: [
       'Equipos para distintos volúmenes',
       'Comparación de formatos',
       'Consulta comercial rápida',
     ],
+    featuredProduct: {
+      name: 'Sobadora pesada',
+      brand: 'La Casa del Panadero',
+      model: 'Super Silenciosa',
+      image: '/sobadora-pesada.jpg',
+      imageAlt: 'Sobadora pesada super silenciosa',
+      badge: 'Producto destacado',
+      shortDescription:
+        'Sobadora de construcción robusta, pensada para panaderías y producciones que necesitan uniformidad, seguridad y un trabajo silencioso con regulación amplia del cilindro.',
+      capacities: ['Pastelera', 'Panadera', '50 posiciones'],
+      highlights: [
+        '50 posiciones de regulación del cilindro para ajustar el trabajo según el tipo de masa.',
+        'Transmisión por engranajes helicoidales en baño de grasa para un funcionamiento confiable.',
+        'Bandejas y laterales en acero inoxidable con barra de pare de seguridad incorporada.',
+      ],
+      description: [
+        'La sobadora Super Silenciosa fue desarrollada para ofrecer un trabajo continuo, parejo y seguro dentro del obrador.',
+        'Su construcción está orientada a facilitar el manejo diario de la masa, incorporando rodillo de apoyo para deslizamiento, bandeja de excedente de harina y una estructura sólida para uso intensivo.',
+        'La ficha técnica distingue versiones para pastelería y panadería, lo que permite evaluar la alternativa más conveniente según potencia, cilindro y dimensiones de máquina.',
+      ],
+      specsTitle: 'Características principales',
+      specs: [
+        '50 posiciones de regulación de cilindro.',
+        'Transmisión por engranajes helicoidales en baño de grasa.',
+        'Montaje de ejes sobre bujes de bronce fosforoso antifricción.',
+        'Bandeja depositadora de excedente de harina.',
+        'Rodillo para facilitar el deslizamiento de la masa.',
+        'Bandejas de entrada y salida de masa y laterales en acero inoxidable.',
+        'Barra de pare de seguridad incorporada.',
+      ],
+      notesTitle: 'Versiones y datos técnicos',
+      notes: [
+        'Modelo Pastelera: sistema a cadena, potencia de 2 HP, cilindro de 140 mm x 500 mm, medidas 900 x 1200 x 1300 mm, peso 170 kg.',
+        'Modelo Panadera: sistema engranado, potencia de 5.5 HP, cilindro de 170 mm x 600 mm, medidas 1200 x 1250 x 1600 mm, peso 370 kg.',
+        'Consulta recomendada para definir versión según tipo de producción y espacio disponible.',
+      ],
+    },
   },
   batidoras: {
     intro:
