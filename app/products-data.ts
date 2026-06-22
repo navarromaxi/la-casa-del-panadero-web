@@ -1,4 +1,33 @@
-export const productCategories = [
+export type ProductCategory = {
+  slug: string
+  name: string
+  summary: string
+}
+
+export type FeaturedProduct = {
+  name: string
+  brand: string
+  model: string
+  image: string
+  imageAlt: string
+  badge?: string
+  shortDescription: string
+  capacities?: string[]
+  highlights: string[]
+  description: string[]
+  specsTitle?: string
+  specs: string[]
+  notesTitle?: string
+  notes: string[]
+}
+
+export type CategoryDetails = {
+  intro: string
+  bullets: string[]
+  featuredProduct?: FeaturedProduct
+}
+
+export const productCategories: readonly ProductCategory[] = [
   {
     slug: 'amasadoras',
     name: 'Amasadoras',
@@ -31,21 +60,49 @@ export const productCategories = [
   },
 ] as const
 
-export const categoryDetails: Record<
-  string,
-  {
-    intro: string
-    bullets: string[]
-  }
-> = {
+export const categoryDetails: Record<string, CategoryDetails> = {
   amasadoras: {
     intro:
-      'Página preparada para cargar amasadoras disponibles, fichas técnicas, capacidades y opciones de consulta.',
+      'Dentro de esta línea hoy contamos con una amasadora espiral orientada a panaderías, pastelerías y producciones que necesitan un trabajo homogéneo en masas de hidratación media.',
     bullets: [
-      'Espacio para modelos disponibles',
-      'Capacidad y tipo de uso',
-      'Consulta directa por WhatsApp',
+      'Amasado parejo para producción artesanal o semiindustrial',
+      'Opciones de capacidad según necesidad operativa',
+      'Consulta directa para disponibilidad, precio y asesoramiento',
     ],
+    featuredProduct: {
+      name: 'Amasadora espiral',
+      brand: 'Mixer',
+      model: 'Start Plus',
+      image: '/amasadora-start-plus.jpg',
+      imageAlt: 'Amasadora espiral Start Plus',
+      badge: 'Producto destacado',
+      shortDescription:
+        'Línea de amasadoras espirales pensada para laboratorios de panadería y pastelería que trabajan principalmente con masas de hidratación media.',
+      capacities: ['35 kg', '50 kg', '60 kg', '80 kg'],
+      highlights: [
+        'Inversión del sentido de giro de la cuba para un trabajo más homogéneo.',
+        'Adecuada para pequeñas cantidades de masa sin perder calidad de mezclado.',
+        'Estructura elevada del suelo para facilitar la limpieza del área de trabajo.',
+      ],
+      description: [
+        'La línea Start Plus fue desarrollada para ofrecer una solución concreta, esencial y confiable para el trabajo diario de panaderías y pastelerías.',
+        'Está especialmente orientada a masas de hidratación media y fue ensayada para lograr buenos resultados incluso con preparaciones que se acercan al 75% de líquido.',
+        'Es una opción muy útil como amasadora principal en pequeños talleres o como segundo equipo de apoyo en producciones que necesitan flexibilidad para tandas más chicas.',
+      ],
+      specsTitle: 'Características principales',
+      specs: [
+        'Amasadora espiral con inversión de giro de cuba.',
+        'Modelos disponibles en capacidades de 35, 50, 60 y 80.',
+        'Pensada para panadería, pastelería y producciones artesanales.',
+        'Configuración funcional y robusta con foco en relación calidad-precio.',
+      ],
+      notesTitle: 'Aplicaciones recomendadas',
+      notes: [
+        'Masas de media hidratación.',
+        'Producciones pequeñas o complementarias dentro del obrador.',
+        'Emprendimientos que buscan un equipo confiable y simple de operar.',
+      ],
+    },
   },
   sobadoras: {
     intro:
