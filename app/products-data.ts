@@ -152,21 +152,91 @@ export const categoryDetails: Record<string, CategoryDetails> = {
   },
   batidoras: {
     intro:
-      'Página preparada para sumar batidoras orientadas a confitería, panadería y gastronomía.',
+      'Dentro de esta categoría hoy presentamos una mezcladora planetaria industrial orientada a procesos exigentes de panadería, pastelería y producción alimentaria.',
     bullets: [
       'Modelos por capacidad',
       'Aplicaciones recomendadas',
       'Solicitud de presupuesto',
     ],
+    featuredProduct: {
+      name: 'Mezcladora planetaria',
+      brand: 'Mixer',
+      model: 'MR EVO',
+      image: '/batidora-mr-evo.jpg',
+      imageAlt: 'Batidora planetaria Mixer MR EVO',
+      badge: 'Producto destacado',
+      shortDescription:
+        'Batidora planetaria de doble herramienta y estructura de puente, pensada para mezcla rápida de ingredientes sólidos y líquidos en producciones de alto nivel.',
+      capacities: ['150 L', '280 L', '400 L', '600 L', '800 L'],
+      highlights: [
+        'Versatilidad de uso para distintos procesos de mezcla y emulsión.',
+        'Velocidad regulable de forma continua para adaptar el trabajo a cada preparación.',
+        'Compatible con múltiples utensilios para ampliar aplicaciones dentro de la producción.',
+      ],
+      description: [
+        'La MR EVO es una mezcladora planetaria industrial diseñada para ofrecer rapidez, versatilidad y consistencia en líneas de producción exigentes.',
+        'Su configuración de doble utensilio a puente permite trabajar con diferentes recetas y texturas, facilitando desde mezclas simples hasta procesos más específicos.',
+        'La ficha original destaca además opciones de automatización, accesorios y configuraciones especiales para adaptar el equipo a cada necesidad operativa.',
+      ],
+      specsTitle: 'Características principales',
+      specs: [
+        'Mezcladora planetaria a doble utensilio.',
+        'Capacidades disponibles: 150, 280, 400, 600 y 800 litros.',
+        'Regulación continua de velocidad de rotación de utensilios y porta-utensilios.',
+        'Sistema preparado para diferentes tipos de amasados, emulsiones y mezclas.',
+        'Cierre hermético de cuba para procesos controlados y más estables.',
+      ],
+      notesTitle: 'Opciones y aplicaciones',
+      notes: [
+        'Posibilidad de trabajar con distintos utensilios según el producto final buscado.',
+        'Opcionales orientados a refrigeración, lavado, pesaje y carga/descarga de ingredientes.',
+        'Equipo apto para panadería, pastelería y procesos alimentarios con mayor nivel de automatización.',
+      ],
+    },
   },
   multidrop: {
     intro:
-      'Página preparada para mostrar líneas multidrop, funciones y posibilidades de producción.',
+      'Dentro de esta categoría hoy presentamos una línea de dosificadoras multidrop orientada a panaderías, confiterías y producciones que necesitan velocidad, repetibilidad y versatilidad en masas dulces o saladas.',
     bullets: [
       'Automatización de procesos',
       'Detalle de prestaciones',
       'Asesoramiento técnico-comercial',
     ],
+    featuredProduct: {
+      name: 'Dosificadora multidrop',
+      brand: 'Mimac / Unique',
+      model: 'Línea compacta',
+      image: '/multidrop.jpg',
+      imageAlt: 'Equipo multidrop compacto para dosificación de masas',
+      badge: 'Producto destacado',
+      shortDescription:
+        'Equipo pensado para automatizar la dosificación y formado de galletitas, masas de repostería y productos similares, con un formato compacto adaptable a obradores de escala artesanal-industrial.',
+      capacities: ['Compacta', 'Hasta 120 porciones/min', 'Bandejas 40x60 / 45x65'],
+      highlights: [
+        'Ideal para panaderías y confiterías que buscan mayor velocidad con producción uniforme.',
+        'Muy útil para masas dulces y saladas con enfoque versátil y formato compacto.',
+        'Posibilidad de coordinar demostraciones para probar la máquina con tu propia masa.',
+      ],
+      description: [
+        'Dentro del mercado regional, las multidrop son una solución muy buscada para acelerar procesos de dosificación y mantener consistencia en piezas repetitivas.',
+        'En este segmento suelen destacarse líneas compactas como Mimac BabyDrop o Maxx, además de modelos tipo Unique, valorados por su velocidad de producción y su buena adaptación a espacios de trabajo más acotados.',
+        'Para el mercado uruguayo, una de las claves es validar la compatibilidad de la máquina con las bandejas utilizadas en el horno y con el tipo de masa real de cada cliente.',
+      ],
+      specsTitle: 'Características principales',
+      specs: [
+        'Equipo orientado a dosificación automática y repetitiva.',
+        'Apto para panadería, confitería y repostería artesanal-industrial.',
+        'Formato compacto para espacios de trabajo reducidos.',
+        'Producción alta según modelo, con referencias de hasta 120 porciones por minuto.',
+        'Versatilidad para masas dulces o saladas según configuración.',
+      ],
+      notesTitle: 'Recomendaciones de compra',
+      notes: [
+        'Coordinar una demo para testear el comportamiento del cabezal con tu propia masa.',
+        'Confirmar compatibilidad con bandejas de 40 x 60 cm o 45 x 65 cm según tu línea de trabajo.',
+        'Consultar disponibilidad y modelo según el nivel de producción que necesitás cubrir.',
+      ],
+    },
   },
   'maquinaria-especial': {
     intro:
