@@ -525,6 +525,10 @@ h3,
   margin-right: auto;
 }
 
+.news-section-intro h2 {
+  max-width: 16ch;
+}
+
 .product-card {
   display: grid;
   gap: 16px;

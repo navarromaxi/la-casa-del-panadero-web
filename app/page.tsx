@@ -23,6 +23,12 @@ const brands = [
   { name: 'JAC', src: '/jac.png', width: 126, height: 126 },
   { name: 'LP Group', src: '/lp-group.png', width: 180, height: 78 },
   { name: 'Rueda Maquinaria', src: '/rueda-maquinaria.png', width: 200, height: 78 },
+  { name: 'Bake Off Italiana', src: '/bake-off.png', width: 210, height: 84 },
+  { name: 'Ciberpan', src: '/ciberpan.png', width: 190, height: 78 },
+  { name: 'Cool Water', src: '/cool-water.png', width: 210, height: 78 },
+  { name: 'Ferneto', src: '/ferneto.png', width: 210, height: 84 },
+  { name: 'Mamoli', src: '/mamoli.png', width: 180, height: 90 },
+  { name: 'RAM', src: '/ram.png', width: 180, height: 84 },
 ]
 
 const highlights = [
