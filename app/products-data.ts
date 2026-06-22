@@ -26,6 +26,7 @@ export type CategoryDetails = {
   intro: string
   bullets: string[]
   featuredProduct?: FeaturedProduct
+  featuredProducts?: FeaturedProduct[]
 }
 
 export const productCategories: readonly ProductCategory[] = [
@@ -288,11 +289,109 @@ export const categoryDetails: Record<string, CategoryDetails> = {
   },
   laminadoras: {
     intro:
-      'Página preparada para laminadoras orientadas a masas finas, trabajo de capas y producción con espesor constante.',
+      'Dentro de esta subcategoría hoy contamos con varias líneas de laminadoras orientadas a panadería y pastelería, pensadas para lograr espesor uniforme, continuidad de trabajo y mejor control sobre masas laminadas.',
     bullets: [
       'Equipos para laminado uniforme',
       'Aplicación en panadería y pastelería',
       'Consulta comercial según producción',
+    ],
+    featuredProducts: [
+      {
+        name: 'Laminadora automática',
+        brand: 'Pasticc',
+        model: 'Tower 660 TS',
+        image: '/laminadora-tower-660-ts.jpg',
+        imageAlt: 'Laminadora automática Pasticc Tower 660 TS',
+        badge: 'Modelo destacado',
+        shortDescription:
+          'Versión automática de alta gama dentro de la línea Tower, equipada con programación para trabajo repetitivo y controlado en producciones exigentes.',
+        capacities: ['Automática', '660 mm', '50 programas'],
+        highlights: [
+          'Control automático con hasta 50 programas de trabajo.',
+          'Pensada para uso intensivo y repetitivo en producción profesional.',
+          'Solución orientada a estandarización y rapidez de operación.',
+        ],
+        description: [
+          'La Tower 660 TS representa la versión más completa de la línea automática, diseñada para producciones que necesitan precisión, repetibilidad y facilidad de uso.',
+          'Comparte estructura con la Beta Tower, pero incorpora control automático programable para optimizar procesos de trabajo recurrentes.',
+        ],
+        specsTitle: 'Características principales',
+        specs: [
+          'Laminadora automática.',
+          'Ancho de laminación de 660 mm.',
+          'Hasta 50 programas configurables.',
+          'Pensada para producción continua en panadería y pastelería.',
+        ],
+        notesTitle: 'Uso recomendado',
+        notes: [
+          'Ideal para producciones que repiten recetas y espesores de forma frecuente.',
+          'Consulta recomendada para validar espacio disponible y flujo de trabajo.',
+        ],
+      },
+      {
+        name: 'Laminadora manual',
+        brand: 'Pasticc',
+        model: 'Classic 600',
+        image: '/laminadora-classic-600.jpg',
+        imageAlt: 'Laminadora Pasticc Classic 600',
+        badge: 'Modelo destacado',
+        shortDescription:
+          'Laminadora con comando a pedal para inversión de tapetes, en una configuración práctica y directa para producciones con operación manual.',
+        capacities: ['Manual', '600 mm', 'A pedal'],
+        highlights: [
+          'Inversión de tapetes mediante pedal.',
+          'Ancho de laminación de 600 mm.',
+          'Configuración simple para trabajo diario y mantenimiento operativo ágil.',
+        ],
+        description: [
+          'La Classic 600 es una opción funcional para quienes buscan una laminadora confiable, con manejo simple y buena respuesta en procesos cotidianos.',
+          'Su estructura está pensada para obradores que valoran la practicidad y el control manual del trabajo de laminado.',
+        ],
+        specsTitle: 'Características principales',
+        specs: [
+          'Laminadora con comando a pedal.',
+          'Ancho de laminación de 600 mm.',
+          'Estructura orientada a uso profesional en panadería y pastelería.',
+        ],
+        notesTitle: 'Uso recomendado',
+        notes: [
+          'Adecuada para trabajo diario con operación manual.',
+          'Muy útil para producciones que necesitan control directo del proceso.',
+        ],
+      },
+      {
+        name: 'Laminadora semiautomática',
+        brand: 'Pasticc',
+        model: 'Beta Tower 660',
+        image: '/laminadora-beta-tower-660.jpg',
+        imageAlt: 'Laminadora semiautomática Pasticc Beta Tower 660',
+        badge: 'Modelo destacado',
+        shortDescription:
+          'Versión semiautomática de la serie Tower, con 660 mm de laminación y estructura reforzada para trabajo artesanal-profesional de alta calidad.',
+        capacities: ['Semiautomática', '660 mm', 'Rodillos 85 mm'],
+        highlights: [
+          'Mayor ancho de trabajo para operar con comodidad sobre la mesa.',
+          'Estructura interna en acero inoxidable AISI 304.',
+          'Rodillos de 85 mm y apertura máxima de 80 mm para trabajo fino y consistente.',
+        ],
+        description: [
+          'La Beta Tower 660 fue desarrollada para combinar robustez, calidad de laminado y practicidad de uso dentro de una estructura compacta.',
+          'La ficha destaca materiales de alta durabilidad, planos de trabajo reforzados y prestaciones orientadas a un laminado preciso a nivel profesional.',
+        ],
+        specsTitle: 'Características principales',
+        specs: [
+          'Laminadora semiautomática.',
+          'Ancho de laminación de 660 mm.',
+          'Rodillos de 85 mm.',
+          'Apertura máxima de 80 mm.',
+          'Estructura interna en acero inoxidable AISI 304.',
+        ],
+        notesTitle: 'Uso recomendado',
+        notes: [
+          'Pensada para panadería y pastelería con foco en calidad de laminado.',
+          'Consulta recomendada para elegir entre solución manual, semiautomática o automática.',
+        ],
+      },
     ],
   },
   armadoras: {

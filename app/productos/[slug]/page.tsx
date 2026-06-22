@@ -40,6 +40,7 @@ export default async function ProductCategoryPage({ params }: ProductPageProps) 
 
   const details = categoryDetails[slug]
   const featuredProduct = details?.featuredProduct
+  const featuredProducts = details?.featuredProducts ?? []
   const childCategories = productCategoryChildren[slug] ?? []
 
   return (
@@ -155,6 +156,80 @@ export default async function ProductCategoryPage({ params }: ProductPageProps) 
                   <li key={note}>{note}</li>
                 ))}
               </ul>
+            </div>
+          </div>
+        </section>
+      ) : null}
+
+      {!featuredProduct && featuredProducts.length ? (
+        <section className="section alt">
+          <div className="container">
+            <p className="eyebrow">Modelos disponibles</p>
+            <h2>Líneas destacadas dentro de esta categoría</h2>
+            <div className="multi-product-grid">
+              {featuredProducts.map((product) => (
+                <article className="multi-product-card" key={`${product.brand}-${product.model}`}>
+                  <div className="multi-product-image-frame">
+                    <Image
+                      src={product.image}
+                      alt={product.imageAlt}
+                      width={1200}
+                      height={900}
+                      className="multi-product-image"
+                    />
+                  </div>
+
+                  <div className="multi-product-copy">
+                    {product.badge ? <p className="eyebrow">{product.badge}</p> : null}
+                    <h3>
+                      {product.brand} {product.model}
+                    </h3>
+                    <p className="product-model-line">{product.name}</p>
+                    <p>{product.shortDescription}</p>
+
+                    {product.capacities?.length ? (
+                      <div className="product-capacities">
+                        {product.capacities.map((capacity) => (
+                          <span key={capacity}>{capacity}</span>
+                        ))}
+                      </div>
+                    ) : null}
+
+                    <div className="product-feature-list">
+                      {product.highlights.map((highlight) => (
+                        <div className="product-feature-item" key={highlight}>
+                          <span />
+                          <p>{highlight}</p>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="multi-product-text-block">
+                      {product.description.map((paragraph) => (
+                        <p key={paragraph}>{paragraph}</p>
+                      ))}
+                    </div>
+
+                    <div className="multi-product-text-block">
+                      <p className="eyebrow">{product.specsTitle ?? 'Características principales'}</p>
+                      <ul className="product-spec-list">
+                        {product.specs.map((spec) => (
+                          <li key={spec}>{spec}</li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div className="multi-product-text-block">
+                      <p className="eyebrow secondary-eyebrow">{product.notesTitle ?? 'Aplicaciones'}</p>
+                      <ul className="product-spec-list">
+                        {product.notes.map((note) => (
+                          <li key={note}>{note}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </article>
+              ))}
             </div>
           </div>
         </section>
