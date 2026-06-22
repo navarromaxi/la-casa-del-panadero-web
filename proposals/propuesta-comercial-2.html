@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Propuesta Comercial 2 | La Casa del Panadero</title>
+    <style>
+      :root {
+        --bg: #f7f1ea;
+        --paper: #fffdfa;
+        --ink: #201712;
+        --muted: #68574d;
+        --brand: #ab551d;
+        --brand-dark: #6b3112;
+        --line: #e4d5c6;
+        --soft: #efe2d4;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Arial, sans-serif;
+        color: var(--ink);
+        background: var(--bg);
+      }
+      .page {
+        width: 210mm;
+        min-height: 297mm;
+        margin: 0 auto;
+        padding: 18mm;
+        background: var(--paper);
+      }
+      .header {
+        padding: 18px 22px;
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        background: linear-gradient(135deg, #fffaf3, #f2e2d3);
+      }
+      .eyebrow {
+        margin: 0 0 10px;
+        color: var(--brand);
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        font-size: 12px;
+        font-weight: 800;
+      }
+      h1, h2, h3 { margin: 0; }
+      h1 {
+        font-size: 34px;
+        line-height: 1;
+        margin-bottom: 10px;
+      }
+      .subtitle {
+        color: var(--muted);
+        font-size: 16px;
+        line-height: 1.6;
+        margin: 0;
+      }
+      .meta {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        margin-top: 24px;
+      }
+      .meta-card, .card, .price-card {
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: #fff;
+      }
+      .meta-card, .card { padding: 16px 18px; }
+      .meta-card strong,
+      .price-card strong {
+        display: block;
+        margin-bottom: 4px;
+      }
+      .meta-card span { color: var(--muted); }
+      .section { margin-top: 26px; }
+      .section h2 {
+        font-size: 22px;
+        margin-bottom: 12px;
+      }
+      .section p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-top: 14px;
+      }
+      ul {
+        margin: 0;
+        padding-left: 18px;
+      }
+      li {
+        margin: 0 0 8px;
+        line-height: 1.6;
+      }
+      .pricing-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-top: 14px;
+      }
+      .price-card {
+        padding: 22px;
+        background: linear-gradient(135deg, #fffaf3, #f7e7d8);
+      }
+      .price {
+        font-size: 34px;
+        font-weight: 800;
+        color: var(--brand-dark);
+        margin: 8px 0;
+      }
+      .price-note {
+        color: var(--muted);
+        line-height: 1.7;
+        margin: 0;
+      }
+      .highlight {
+        margin-top: 16px;
+        padding: 14px 16px;
+        border-radius: 16px;
+        background: var(--soft);
+        color: var(--brand-dark);
+        line-height: 1.6;
+        font-weight: 600;
+      }
+      .footer {
+        margin-top: 28px;
+        padding-top: 18px;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.7;
+      }
+      .contact {
+        color: var(--ink);
+        font-weight: 700;
+      }
+      @page {
+        size: A4;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="header">
+        <p class="eyebrow">PymesSistemas · Propuesta Comercial</p>
+        <h1>Propuesta 2 para La Casa del Panadero</h1>
+        <p class="subtitle">
+          Una propuesta pensada para resolver la web y, además, acompañar su evolución con soporte
+          mensual para que el sitio no quede desatendido ante cambios, consultas o ajustes básicos.
+        </p>
+      </div>
+
+      <div class="meta">
+        <div class="meta-card">
+          <strong>Cliente</strong>
+          <span>La Casa del Panadero</span>
+        </div>
+        <div class="meta-card">
+          <strong>Proveedor</strong>
+          <span>PymesSistemas</span>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Qué incluye esta propuesta</h2>
+        <div class="grid">
+          <div class="card">
+            <ul>
+              <li>Diseño y desarrollo de sitio web informativo.</li>
+              <li>Home institucional y comercial.</li>
+              <li>Categorías de productos con sus páginas preparadas.</li>
+              <li>Canales de contacto por WhatsApp.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <ul>
+              <li>Versión responsive para desktop y mobile.</li>
+              <li>Estructura lista para seguir cargando contenido.</li>
+              <li>Entrega publicada y preparada para seguimiento.</li>
+              <li>Acompañamiento mensual posterior a la entrega.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Inversión</h2>
+        <div class="pricing-grid">
+          <div class="price-card">
+            <strong>Desarrollo inicial de la web</strong>
+            <div class="price">USD 200</div>
+            <p class="price-note">
+              Corresponde al armado y entrega del sitio web según el alcance definido.
+            </p>
+          </div>
+          <div class="price-card">
+            <strong>Soporte mensual</strong>
+            <div class="price">USD 60 / mes</div>
+            <p class="price-note">
+              Servicio pensado para mantener la web cuidada, actualizada y acompañada en el día a
+              día.
+            </p>
+          </div>
+        </div>
+        <div class="highlight">
+          El soporte mensual incluye cambios básicos, SEO básico, actualizaciones generales y
+          atención ante cualquier problema que pueda surgir con la web.
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Beneficios de esta modalidad</h2>
+        <div class="grid">
+          <div class="card">
+            <ul>
+              <li>La inversión inicial es más liviana.</li>
+              <li>La web no queda estática ni desatendida después de publicar.</li>
+              <li>Permite ir ajustando detalles sin renegociar cada pequeño cambio.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <ul>
+              <li>Hay respaldo técnico si necesitan ayuda o detectan un problema.</li>
+              <li>Se mantiene una mejora continua con criterio técnico.</li>
+              <li>Es una opción cómoda para una empresa que no quiere ocuparse de la parte web.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        Gracias por considerar esta propuesta. La intención es que La Casa del Panadero pueda tener
+        una web prolija desde el inicio y, al mismo tiempo, la tranquilidad de contar con
+        acompañamiento mensual.
+        <br /><br />
+        <span class="contact">PymesSistemas</span><br />
+        www.pymessistemas.com<br />
+        Contacto: 097 323 916
+      </div>
+    </div>
+  </body>
+</html>
