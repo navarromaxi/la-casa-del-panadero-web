@@ -1,6 +1,5 @@
 import {
   ArrowRight,
-  CheckCircle2,
   ChevronRight,
   Clock3,
   CreditCard,
@@ -13,19 +12,18 @@ import {
   Truck,
   Wrench,
 } from 'lucide-react'
+import Image from 'next/image'
 import { ContactForm } from './contact-form'
 import { productCategories } from './products-data'
 
 const brands = [
-  'Logo de marca 1',
-  'Logo de marca 2',
-  'Logo de marca 3',
-  'Logo de marca 4',
-  'Logo de marca 5',
-  'Logo de marca 6',
+  { name: 'Bassanina Baking', src: '/bassanina-baking.png', width: 210, height: 84 },
+  { name: 'Colip', src: '/colip.png', width: 190, height: 78 },
+  { name: 'Delfin', src: '/delfin.png', width: 190, height: 78 },
+  { name: 'JAC', src: '/jac.png', width: 126, height: 126 },
+  { name: 'LP Group', src: '/lp-group.png', width: 180, height: 78 },
+  { name: 'Rueda Maquinaria', src: '/rueda-maquinaria.png', width: 200, height: 78 },
 ]
-
-const clients = ['Cliente 1', 'Cliente 2', 'Cliente 3', 'Cliente 4', 'Cliente 5', 'Cliente 6']
 
 const highlights = [
   {
@@ -69,6 +67,21 @@ const process = [
   'Contanos qué necesitás para tu panadería, confitería o cocina de producción.',
   'Te orientamos sobre equipos, repuestos o productos de cuadra según tu escala.',
   'Coordinamos presupuesto, entrega y soporte técnico si el equipo lo requiere.',
+]
+
+const showcaseItems = [
+  {
+    title: 'Equipamiento para abrir, renovar o ampliar la producción.',
+    text: 'Te ayudamos a definir maquinaria según el tamaño de tu operación, el ritmo de trabajo y la etapa en la que está tu negocio.',
+  },
+  {
+    title: 'Reposición de repuestos, insumos y accesorios de uso diario.',
+    text: 'Centralizamos soluciones para el funcionamiento cotidiano, desde piezas de recambio hasta complementos necesarios para no frenar la producción.',
+  },
+  {
+    title: 'Asistencia técnica cuando el equipo necesita mantenimiento o ajuste.',
+    text: 'Nuestro servicio técnico acompaña la postventa con diagnóstico, mantenimiento y respuesta cuando la operación necesita continuidad.',
+  },
 ]
 
 export default function Home() {
@@ -160,12 +173,8 @@ export default function Home() {
           </p>
         </div>
         <div className="container product-grid">
-          {productCategories.map((product, index) => (
+          {productCategories.map((product) => (
             <a className="product-card" key={product.slug} id={product.slug} href={`/productos/${product.slug}`}>
-              <div className="product-card-top">
-                <span className="product-card-kicker">Categoría {String(index + 1).padStart(2, '0')}</span>
-                <CheckCircle2 size={18} />
-              </div>
               <div>
                 <span>{product.name}</span>
                 <small>{product.summary}</small>
@@ -192,17 +201,23 @@ export default function Home() {
       </section>
 
       <section className="section alt">
-        <div className="container">
+        <div className="container brands-section">
           <p className="eyebrow">Marcas</p>
           <h2>Trabajamos con marcas reconocidas del rubro</h2>
           <p className="section-intro">
-            Acá van los logos reales que te van a pasar en PNG. Por ahora quedan placeholders para
-            mantener la estructura lista.
+            Estas son algunas de las marcas que acompañan nuestro trabajo y refuerzan la confianza
+            que brindamos en cada proyecto.
           </p>
           <div className="logo-grid">
             {brands.map((brand) => (
-              <div className="logo-card" key={brand}>
-                {brand}
+              <div className="logo-card brand-logo-card" key={brand.name}>
+                <Image
+                  className="brand-logo-image"
+                  src={brand.src}
+                  alt={brand.name}
+                  width={brand.width}
+                  height={brand.height}
+                />
               </div>
             ))}
           </div>
@@ -216,18 +231,15 @@ export default function Home() {
             <h2>Venta, reposición y soporte para negocios que no pueden frenar</h2>
           </div>
           <div className="showcase-list">
-            <div className="showcase-item">
-              <ChevronRight size={18} />
-              <span>Equipamiento para abrir, renovar o ampliar la producción.</span>
-            </div>
-            <div className="showcase-item">
-              <ChevronRight size={18} />
-              <span>Reposición de repuestos, insumos y accesorios de uso diario.</span>
-            </div>
-            <div className="showcase-item">
-              <ChevronRight size={18} />
-              <span>Asistencia técnica cuando el equipo necesita mantenimiento o ajuste.</span>
-            </div>
+            {showcaseItems.map((item) => (
+              <details className="showcase-item" key={item.title}>
+                <summary className="showcase-summary">
+                  <ChevronRight size={18} />
+                  <span>{item.title}</span>
+                </summary>
+                <p className="showcase-detail">{item.text}</p>
+              </details>
+            ))}
           </div>
         </div>
       </section>
@@ -318,34 +330,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section">
-        <div className="container">
-          <p className="eyebrow">Clientes</p>
-          <h2>Algunos de nuestros clientes</h2>
-          <p className="section-intro">
-            Esta sección queda pronta para reemplazar con los nombres y logos que te compartan.
-          </p>
-        </div>
-      </section>
-      <section className="section clients-section">
-        <div className="container">
-          <div className="logo-grid">
-            {clients.map((client) => (
-              <div className="logo-card client-card" key={client}>
-                {client}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="section alt news-section">
-        <div className="container">
+        <div className="container news-section-intro">
           <p className="eyebrow">Destacados</p>
           <h2>Un espacio simple para ir moviendo ofertas, novedades o financiación</h2>
           <p className="section-intro">
-            Esta sección está ubicada debajo de Clientes y antes del bloque de contacto. La dejé
-            preparada para que puedan cambiar solo estos destacados cuando quieran empujar algo.
+            Este espacio puede usarse para comunicar promociones, equipos sugeridos o nuevas
+            condiciones de pago sin necesidad de modificar el resto del sitio.
           </p>
           <div className="highlight-grid">
             {highlights.map((item) => (
