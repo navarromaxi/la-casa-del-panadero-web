@@ -6,6 +6,8 @@
   --muted: #59636e;
   --brand: #8f99a3;
   --brand-dark: #4f5963;
+  --accent: #d26d53;
+  --accent-dark: #a44f39;
   --line: #c9d0d8;
   --soft: #e5eaef;
   --shadow: 0 24px 60px rgba(58, 67, 77, 0.14);
@@ -27,6 +29,7 @@ body {
     radial-gradient(circle at top left, rgba(255, 255, 255, 0.72), transparent 24%),
     radial-gradient(circle at top right, rgba(194, 201, 209, 0.32), transparent 30%),
     linear-gradient(180deg, #f4f6f8 0%, #dfe4e8 48%, #d5dbe0 100%);
+  background-attachment: fixed;
 }
 
 a {
@@ -82,8 +85,11 @@ h3,
   letter-spacing: -0.05em;
 }
 
-.brand span {
-  color: var(--brand-dark);
+.brand img {
+  display: block;
+  width: auto;
+  height: 56px;
+  filter: drop-shadow(0 8px 20px rgba(210, 109, 83, 0.12));
 }
 
 .nav-links {
@@ -94,7 +100,7 @@ h3,
 }
 
 .nav-link-active {
-  color: var(--brand-dark);
+  color: var(--accent-dark);
 }
 
 .nav-actions {
@@ -159,8 +165,8 @@ h3,
 
 .nav-dropdown-item-active,
 .nav-dropdown-menu a:hover {
-  background: var(--soft);
-  color: var(--brand-dark);
+  background: linear-gradient(135deg, rgba(210, 109, 83, 0.12), rgba(143, 153, 163, 0.14));
+  color: var(--accent-dark);
 }
 
 .mobile-menu-toggle,
@@ -221,9 +227,9 @@ h3,
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #6c7680, #8d98a3);
+  background: linear-gradient(135deg, #bf664f, #d98266);
   color: #fff;
-  box-shadow: 0 14px 30px rgba(79, 89, 99, 0.24);
+  box-shadow: 0 14px 30px rgba(164, 79, 57, 0.26);
 }
 
 .btn-dark {
@@ -232,13 +238,25 @@ h3,
 }
 
 .btn-outline {
-  border-color: #7f8994;
+  border-color: rgba(164, 79, 57, 0.42);
   background: transparent;
-  color: var(--brand-dark);
+  color: var(--accent-dark);
 }
 
 .hero {
   padding: 88px 0 56px;
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(120deg, rgba(255, 255, 255, 0.14), transparent 24%),
+    linear-gradient(90deg, rgba(79, 89, 99, 0.03) 0, rgba(79, 89, 99, 0.03) 1px, transparent 1px, transparent 120px);
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.96), rgba(0, 0, 0, 0.68));
+  pointer-events: none;
 }
 
 .hero-grid {
@@ -250,7 +268,7 @@ h3,
 
 .eyebrow {
   margin: 0;
-  color: var(--brand-dark);
+  color: var(--accent-dark);
   font-size: 0.82rem;
   font-weight: 900;
   letter-spacing: 0.14em;
@@ -286,7 +304,7 @@ h3,
   min-height: 36px;
   border-radius: 999px;
   padding: 8px 14px;
-  background: var(--soft);
+  background: linear-gradient(135deg, rgba(210, 109, 83, 0.14), rgba(255, 255, 255, 0.55));
   color: #44505b;
   font-size: 0.88rem;
   font-weight: 800;
@@ -308,6 +326,26 @@ h3,
   border-radius: 30px;
   background: linear-gradient(180deg, rgba(249, 250, 251, 0.98) 0%, rgba(232, 237, 241, 0.98) 100%);
   box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-card::before,
+.story-card::before,
+.info-box::before,
+.form::before,
+.payment-card::before,
+.logo-card::before,
+.news-card::before,
+.product-card::before,
+.feature-card::before,
+.category-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), rgba(255, 255, 255, 0));
 }
 
 .hero-card,
@@ -340,7 +378,7 @@ h3,
   padding: 16px 14px;
   border: 1px solid var(--line);
   border-radius: 18px;
-  background: rgba(255, 255, 255, 0.58);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.66), rgba(226, 232, 237, 0.52));
 }
 
 .hero-metrics strong {
@@ -386,7 +424,7 @@ h3,
 }
 
 .feature-card svg {
-  color: var(--brand-dark);
+  color: var(--accent);
 }
 
 .feature-card h3 {
@@ -472,6 +510,7 @@ h3,
 .product-card:hover {
   border-color: #aeb7c0;
   transform: translateY(-2px);
+  box-shadow: 0 20px 36px rgba(58, 67, 77, 0.14);
 }
 
 .product-card div {
@@ -487,7 +526,7 @@ h3,
 }
 
 .product-card-kicker {
-  color: var(--brand-dark);
+  color: var(--accent-dark);
   font-size: 0.74rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -507,11 +546,11 @@ h3,
 
 .product-card svg,
 .showcase-item svg {
-  color: var(--brand-dark);
+  color: var(--accent);
 }
 
 .product-card-link {
-  color: var(--brand-dark);
+  color: var(--accent-dark);
   font-size: 0.92rem;
 }
 
@@ -586,6 +625,10 @@ h3,
   font-weight: 700;
 }
 
+.showcase-item:hover {
+  border-color: rgba(210, 109, 83, 0.24);
+}
+
 .service-grid,
 .contact-grid {
   grid-template-columns: 1fr 0.88fr;
@@ -619,7 +662,7 @@ h3,
   height: 12px;
   margin-top: 9px;
   border-radius: 999px;
-  background: var(--brand-dark);
+  background: var(--accent);
 }
 
 .service-step p {
@@ -633,7 +676,7 @@ h3,
 .story-quote {
   margin: 24px 0 0;
   padding: 20px 22px;
-  border-left: 4px solid var(--brand-dark);
+  border-left: 4px solid var(--accent);
   border-radius: 0 18px 18px 0;
   background: rgba(229, 234, 239, 0.72);
   font-family: var(--font-heading), sans-serif;
@@ -909,8 +952,8 @@ h3,
     transition: transform 160ms ease;
   }
 
-  .mobile-submenu-toggle.is-open {
-    color: var(--brand-dark);
+.mobile-submenu-toggle.is-open {
+    color: var(--accent-dark);
   }
 
   .mobile-submenu-toggle .is-open {
@@ -934,7 +977,7 @@ h3,
   }
 
   .mobile-submenu-item-active {
-    color: var(--brand-dark) !important;
+    color: var(--accent-dark) !important;
   }
 
   .mobile-whatsapp {
@@ -1005,6 +1048,10 @@ h3,
 
   .brand {
     font-size: 1.3rem;
+  }
+
+  .brand img {
+    height: 44px;
   }
 
   .hero h1 {

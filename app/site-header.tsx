@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { ChevronDown, Menu, X } from 'lucide-react'
@@ -43,7 +44,13 @@ export function SiteHeader() {
       <nav className="navbar">
         <div className="container nav-inner">
           <Link className="brand" href="/">
-            <span>La Casa</span> del Panadero
+            <Image
+              src="/logo-la-casa-del-panadero.png"
+              alt="La Casa del Panadero"
+              width={228}
+              height={68}
+              priority
+            />
           </Link>
 
           <div className="nav-links">
