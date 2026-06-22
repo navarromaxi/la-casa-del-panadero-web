@@ -629,6 +629,28 @@ h3,
   max-width: 860px;
 }
 
+.story-quote {
+  margin: 24px 0 0;
+  padding: 20px 22px;
+  border-left: 4px solid var(--brand);
+  border-radius: 0 18px 18px 0;
+  background: rgba(239, 226, 212, 0.45);
+  font-family: var(--font-heading), sans-serif;
+  font-size: 1.18rem;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+}
+
+.story-signoff {
+  margin-top: 18px !important;
+  font-weight: 700;
+  color: var(--ink) !important;
+}
+
+.clients-section {
+  padding-top: 0;
+}
+
 .news-section {
   padding-top: 0;
 }

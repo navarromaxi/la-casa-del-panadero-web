@@ -266,27 +266,55 @@ export default function Home() {
       <section id="historia" className="section">
         <div className="container story-card">
           <p className="eyebrow">Nuestra historia</p>
-          <h2>Desde 1989 vinculados al crecimiento de la industria panadera</h2>
+          <h2>Más de 35 años acompañando el crecimiento de la panificación y la gastronomía</h2>
           <p>
-            Nuestros comienzos datan del año 1989, cuando iniciamos la empresa dentro de la
-            industria panadera, enfocados en la reparación de maquinaria industrial y
-            semiindustrial. En esa primera etapa también fabricábamos amasadoras, sobadoras,
-            batidoras y armadoras, desarrollando una industria nacional que fue consolidando su
-            calidad junto al respaldo de la clientela local.
+            En La Casa del Panadero llevamos más de 35 años acompañando los sueños, desafíos y el
+            crecimiento de quienes apuestan cada día por el mundo de la panificación y la
+            gastronomía.
           </p>
           <p>
-            Con el crecimiento de la empresa llegaron los primeros vínculos comerciales con
-            Argentina y Brasil, abriendo paso a la importación de maquinaria terminada en origen y a
-            una expansión más fuerte hacia el MERCOSUR. Ese proceso los llevó a representar marcas
-            internacionales y a ampliar su alcance hacia panaderías, confiterías, supermercados,
-            líneas industriales y también gastronomía.
+            Nuestra historia comenzó en 1989, con una convicción muy clara: brindar soluciones
+            confiables y de calidad a través de la reparación de maquinaria industrial y
+            semiindustrial. Con esfuerzo, dedicación y una fuerte vocación de servicio, fuimos
+            dando nuestros primeros pasos fabricando equipos nacionales como sobadoras, orgullosos
+            de contribuir al desarrollo de la industria uruguaya.
           </p>
           <p>
-            Hoy La Casa del Panadero trabaja con marcas de distintos países, sostiene el valor del
-            servicio postventa como parte central de su propuesta y continúa creciendo con un equipo
-            distribuido entre dirección, administración, ventas y servicio técnico. La experiencia,
-            la atención personalizada y el respaldo técnico siguen siendo la base de su prestigio.
+            La confianza de nuestros clientes fue el motor que impulsó nuestro crecimiento. Gracias
+            a ella, ampliamos nuestras fronteras, incorporamos nuevas tecnologías y establecimos
+            alianzas estratégicas con reconocidas marcas internacionales, acercando al mercado local
+            equipamiento de primer nivel.
           </p>
+          <p>
+            Hoy somos una empresa consolidada y referente en el sector, especializada en la
+            comercialización, instalación y servicio técnico de maquinaria para panaderías,
+            confiterías, supermercados, plantas industriales y emprendimientos gastronómicos en
+            general. Además, contamos con la representación de destacadas marcas del mundo, entre
+            ellas la prestigiosa firma italiana Bassanina, reconocida por su innovación y
+            excelencia.
+          </p>
+          <p>
+            Pero más allá de los equipos que ofrecemos, creemos que nuestro mayor valor está en las
+            personas. En escuchar, asesorar y acompañar a cada cliente como si su proyecto fuera
+            también parte del nuestro. Porque entendemos que detrás de cada panadería, confitería,
+            supermercado, panificadora y cada emprendimiento, hay historias de trabajo, esfuerzo y
+            sueños por cumplir.
+          </p>
+          <p>
+            La calidad, la atención personalizada, el compromiso y el respaldo técnico han sido los
+            pilares que nos han acompañado durante todos estos años y que continúan guiando nuestro
+            camino.
+          </p>
+          <p>
+            En La Casa del Panadero no solo vendemos maquinaria: construimos relaciones de
+            confianza, brindamos soluciones y seguimos trabajando, como desde el primer día, para
+            estar al lado de quienes hacen crecer esta gran industria.
+          </p>
+          <blockquote className="story-quote">
+            “No nos vendieron solo una máquina; nos dieron respaldo, experiencia y la tranquilidad
+            de saber que siempre están cuando los necesitamos.”
+          </blockquote>
+          <p className="story-signoff">Ese es, y seguirá siendo, nuestro mayor orgullo.</p>
         </div>
       </section>
 
@@ -297,6 +325,10 @@ export default function Home() {
           <p className="section-intro">
             Esta sección queda pronta para reemplazar con los nombres y logos que te compartan.
           </p>
+        </div>
+      </section>
+      <section className="section clients-section">
+        <div className="container">
           <div className="logo-grid">
             {clients.map((client) => (
               <div className="logo-card client-card" key={client}>
