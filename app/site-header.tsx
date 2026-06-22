@@ -3,23 +3,29 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { ChevronDown, Menu, X } from 'lucide-react'
+import { ChevronDown, ChevronRight, Menu, X } from 'lucide-react'
 import { useEffect, useMemo, useState } from 'react'
-import { productCategories } from './products-data'
+import { productCategories, productCategoryChildren, topLevelProductCategories } from './products-data'
 
 export function SiteHeader() {
   const pathname = usePathname()
   const [menuOpen, setMenuOpen] = useState(false)
   const [productsOpen, setProductsOpen] = useState(false)
+  const [specialProductsOpen, setSpecialProductsOpen] = useState(false)
 
   const activeCategory = useMemo(() => {
-    return productCategories.find((category) => pathname === `/productos/${category.slug}`)?.slug ?? null
+    return productCategories.find((category) => pathname === `/productos/${category.slug}`) ?? null
   }, [pathname])
+
+  const activeCategorySlug = activeCategory?.slug ?? null
+  const activeParentSlug = activeCategory?.parentSlug ?? activeCategory?.slug ?? null
+  const specialChildren = productCategoryChildren['maquinaria-especial'] ?? []
 
   useEffect(() => {
     setMenuOpen(false)
-    setProductsOpen(Boolean(activeCategory))
-  }, [pathname, activeCategory])
+    setProductsOpen(Boolean(activeCategorySlug))
+    setSpecialProductsOpen(activeParentSlug === 'maquinaria-especial')
+  }, [pathname, activeCategorySlug, activeParentSlug])
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : ''
@@ -56,19 +62,49 @@ export function SiteHeader() {
           <div className="nav-links">
             <a href="/#propuesta">Propuesta</a>
             <div className="nav-dropdown">
-              <a className={activeCategory ? 'nav-link-active' : undefined} href="/#productos">
+              <a className={activeCategorySlug ? 'nav-link-active' : undefined} href="/#productos">
                 Productos <ChevronDown size={16} />
               </a>
               <div className="nav-dropdown-menu">
-                {productCategories.map((category) => (
-                  <Link
-                    key={category.slug}
-                    href={`/productos/${category.slug}`}
-                    className={activeCategory === category.slug ? 'nav-dropdown-item-active' : undefined}
-                  >
-                    {category.name}
-                  </Link>
-                ))}
+                {topLevelProductCategories.map((category) => {
+                  const children = productCategoryChildren[category.slug] ?? []
+                  const isParentActive = activeParentSlug === category.slug
+
+                  if (!children.length) {
+                    return (
+                      <Link
+                        key={category.slug}
+                        href={`/productos/${category.slug}`}
+                        className={activeCategorySlug === category.slug ? 'nav-dropdown-item-active' : undefined}
+                      >
+                        {category.name}
+                      </Link>
+                    )
+                  }
+
+                  return (
+                    <div className="nav-subdropdown" key={category.slug}>
+                      <Link
+                        href={`/productos/${category.slug}`}
+                        className={isParentActive ? 'nav-dropdown-item-active nav-subdropdown-trigger' : 'nav-subdropdown-trigger'}
+                      >
+                        <span>{category.name}</span>
+                        <ChevronRight size={15} />
+                      </Link>
+                      <div className="nav-subdropdown-menu">
+                        {children.map((child) => (
+                          <Link
+                            key={child.slug}
+                            href={`/productos/${child.slug}`}
+                            className={activeCategorySlug === child.slug ? 'nav-dropdown-item-active' : undefined}
+                          >
+                            {child.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  )
+                })}
               </div>
             </div>
             <a href="/#service">Service</a>
@@ -92,7 +128,9 @@ export function SiteHeader() {
           </div>
         </div>
 
-        {menuOpen ? <button type="button" className="mobile-nav-backdrop" aria-label="Cerrar menú" onClick={() => setMenuOpen(false)} /> : null}
+        {menuOpen ? (
+          <button type="button" className="mobile-nav-backdrop" aria-label="Cerrar menú" onClick={() => setMenuOpen(false)} />
+        ) : null}
 
         {menuOpen ? (
           <div className="mobile-nav">
@@ -109,15 +147,56 @@ export function SiteHeader() {
               </button>
               {productsOpen ? (
                 <div className="mobile-submenu">
-                  {productCategories.map((category) => (
-                    <Link
-                      key={category.slug}
-                      href={`/productos/${category.slug}`}
-                      className={activeCategory === category.slug ? 'mobile-submenu-item-active' : undefined}
-                    >
-                      {category.name}
-                    </Link>
-                  ))}
+                  {topLevelProductCategories.map((category) => {
+                    const children = productCategoryChildren[category.slug] ?? []
+                    const isParentActive = activeParentSlug === category.slug
+
+                    if (!children.length) {
+                      return (
+                        <Link
+                          key={category.slug}
+                          href={`/productos/${category.slug}`}
+                          className={activeCategorySlug === category.slug ? 'mobile-submenu-item-active' : undefined}
+                        >
+                          {category.name}
+                        </Link>
+                      )
+                    }
+
+                    return (
+                      <div className="mobile-submenu-group" key={category.slug}>
+                        <div className="mobile-submenu-parent-row">
+                          <Link
+                            href={`/productos/${category.slug}`}
+                            className={isParentActive ? 'mobile-submenu-item-active mobile-submenu-parent-link' : 'mobile-submenu-parent-link'}
+                          >
+                            {category.name}
+                          </Link>
+                          <button
+                            type="button"
+                            className={`mobile-submenu-toggle mobile-submenu-nested-toggle${specialProductsOpen ? ' is-open' : ''}`}
+                            aria-expanded={specialProductsOpen}
+                            onClick={() => setSpecialProductsOpen((value) => !value)}
+                          >
+                            <ChevronDown size={16} className={specialProductsOpen ? 'is-open' : ''} />
+                          </button>
+                        </div>
+                        {specialProductsOpen ? (
+                          <div className="mobile-submenu mobile-submenu-nested">
+                            {children.map((child) => (
+                              <Link
+                                key={child.slug}
+                                href={`/productos/${child.slug}`}
+                                className={activeCategorySlug === child.slug ? 'mobile-submenu-item-active' : undefined}
+                              >
+                                {child.name}
+                              </Link>
+                            ))}
+                          </div>
+                        ) : null}
+                      </div>
+                    )
+                  })}
                 </div>
               ) : null}
               <a href="/#service">Service</a>

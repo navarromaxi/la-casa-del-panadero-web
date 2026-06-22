@@ -2,6 +2,7 @@ export type ProductCategory = {
   slug: string
   name: string
   summary: string
+  parentSlug?: string
 }
 
 export type FeaturedProduct = {
@@ -51,7 +52,31 @@ export const productCategories: readonly ProductCategory[] = [
   {
     slug: 'maquinaria-especial',
     name: 'Maquinaria Especial',
-    summary: 'Categoría preparada para equipos específicos o soluciones a medida.',
+    summary: 'Categoría orientada a equipos específicos, complementarios o de producción especializada.',
+  },
+  {
+    slug: 'laminadoras',
+    name: 'Laminadoras',
+    summary: 'Equipos para laminar masa con espesor parejo y ritmo constante de trabajo.',
+    parentSlug: 'maquinaria-especial',
+  },
+  {
+    slug: 'armadoras',
+    name: 'Armadoras',
+    summary: 'Soluciones para formado y armado de piezas con producción más uniforme.',
+    parentSlug: 'maquinaria-especial',
+  },
+  {
+    slug: 'cortadoras-de-pan',
+    name: 'Cortadoras de pan',
+    summary: 'Equipos para corte prolijo, rápido y repetitivo en panadería y retail.',
+    parentSlug: 'maquinaria-especial',
+  },
+  {
+    slug: 'grupo-croissant',
+    name: 'Grupo Croissant',
+    summary: 'Línea pensada para armado, laminado y trabajo específico de croissant y viennoiserie.',
+    parentSlug: 'maquinaria-especial',
   },
   {
     slug: 'utensilios',
@@ -59,6 +84,20 @@ export const productCategories: readonly ProductCategory[] = [
     summary: 'Complementos y accesorios para la operación diaria del negocio.',
   },
 ] as const
+
+export const topLevelProductCategories = productCategories.filter((category) => !category.parentSlug)
+
+export const productCategoryChildren: Record<string, ProductCategory[]> = productCategories.reduce<
+  Record<string, ProductCategory[]>
+>((acc, category) => {
+  if (!category.parentSlug) {
+    return acc
+  }
+
+  acc[category.parentSlug] ??= []
+  acc[category.parentSlug].push(category)
+  return acc
+}, {})
 
 export const categoryDetails: Record<string, CategoryDetails> = {
   amasadoras: {
@@ -240,11 +279,47 @@ export const categoryDetails: Record<string, CategoryDetails> = {
   },
   'maquinaria-especial': {
     intro:
-      'Página preparada para equipos especiales, importados o soluciones más específicas del rubro.',
+      'Esta categoría reúne equipos específicos que amplían la capacidad del obrador y resuelven etapas particulares de la producción, el formado o el acabado del producto.',
     bullets: [
-      'Soluciones a medida',
-      'Equipos especiales por necesidad',
-      'Contacto personalizado',
+      'Subcategorías especializadas por tipo de proceso',
+      'Equipos para producción complementaria',
+      'Asesoramiento según espacio, volumen y uso',
+    ],
+  },
+  laminadoras: {
+    intro:
+      'Página preparada para laminadoras orientadas a masas finas, trabajo de capas y producción con espesor constante.',
+    bullets: [
+      'Equipos para laminado uniforme',
+      'Aplicación en panadería y pastelería',
+      'Consulta comercial según producción',
+    ],
+  },
+  armadoras: {
+    intro:
+      'Página preparada para armadoras pensadas para mejorar el formado y la repetibilidad de piezas dentro de la línea de producción.',
+    bullets: [
+      'Formado más uniforme',
+      'Ritmo de trabajo sostenido',
+      'Asesoramiento según tipo de pieza',
+    ],
+  },
+  'cortadoras-de-pan': {
+    intro:
+      'Página preparada para cortadoras de pan con foco en velocidad, seguridad y corte parejo para despacho o exhibición.',
+    bullets: [
+      'Corte prolijo y repetitivo',
+      'Uso en panadería y retail',
+      'Consulta por formato de pan y capacidad',
+    ],
+  },
+  'grupo-croissant': {
+    intro:
+      'Página preparada para equipos y soluciones orientadas al trabajo específico de croissant, laminado y viennoiserie.',
+    bullets: [
+      'Procesos específicos para croissant',
+      'Producción más consistente',
+      'Asesoramiento para línea de viennoiserie',
     ],
   },
   utensilios: {
