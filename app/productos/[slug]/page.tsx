@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowLeft, MessageCircle } from 'lucide-react'
-import { categoryDetails, productCategories } from '../../products-data'
+import { ArrowLeft, ChevronRight, MessageCircle } from 'lucide-react'
+import { categoryDetails, productCategories, productCategoryChildren } from '../../products-data'
 
 type ProductPageProps = {
   params: Promise<{
@@ -40,6 +40,7 @@ export default async function ProductCategoryPage({ params }: ProductPageProps) 
 
   const details = categoryDetails[slug]
   const featuredProduct = details?.featuredProduct
+  const childCategories = productCategoryChildren[slug] ?? []
 
   return (
     <main className="category-page">
@@ -154,6 +155,28 @@ export default async function ProductCategoryPage({ params }: ProductPageProps) 
                   <li key={note}>{note}</li>
                 ))}
               </ul>
+            </div>
+          </div>
+        </section>
+      ) : null}
+
+      {childCategories.length ? (
+        <section className="section alt">
+          <div className="container">
+            <p className="eyebrow">Accesos rápidos</p>
+            <h2>Explorá las líneas de maquinaria especial</h2>
+            <div className="special-category-grid">
+              {childCategories.map((child) => (
+                <Link className="special-category-card" key={child.slug} href={`/productos/${child.slug}`}>
+                  <div>
+                    <span>{child.name}</span>
+                    <small>{child.summary}</small>
+                  </div>
+                  <span className="special-category-link">
+                    Ver landing <ChevronRight size={16} />
+                  </span>
+                </Link>
+              ))}
             </div>
           </div>
         </section>

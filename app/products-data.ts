@@ -315,12 +315,47 @@ export const categoryDetails: Record<string, CategoryDetails> = {
   },
   'grupo-croissant': {
     intro:
-      'Página preparada para equipos y soluciones orientadas al trabajo específico de croissant, laminado y viennoiserie.',
+      'Dentro de esta subcategoría hoy presentamos una línea específica para la producción de croissant, pensada para obradores que necesitan ritmo, precisión de formado y calidad constante en piezas laminadas.',
     bullets: [
       'Procesos específicos para croissant',
       'Producción más consistente',
       'Asesoramiento para línea de viennoiserie',
     ],
+    featuredProduct: {
+      name: 'Grupo para croissant',
+      brand: 'Pasticc',
+      model: '530 Avant',
+      image: '/grupo-croissant-avant-530.png',
+      imageAlt: 'Grupo Croissant Pasticc 530 Avant',
+      badge: 'Producto destacado',
+      shortDescription:
+        'Equipo concebido para combinar alta producción con calidad final de producto, especialmente orientado a líneas de croissant y viennoiserie en espacios de trabajo contenidos.',
+      capacities: ['2 a 6 filas', '2000 a 6000 croissants/h', 'Formato compacto'],
+      highlights: [
+        'Permite programar diferentes medidas de base del triángulo según el producto a fabricar.',
+        'Configuración variable de trabajo entre 2 y 6 filas para adaptar la producción.',
+        'Diseño orientado a alta productividad sin resignar precisión en el formado.',
+      ],
+      description: [
+        'El modelo 530 Avant fue desarrollado para resolver la producción de croissant con una combinación equilibrada entre rendimiento, calidad de formado y aprovechamiento del espacio.',
+        'La ficha técnica destaca especialmente la galería con orientación variable del triángulo de masa, que permite distintas configuraciones de trabajo manteniendo un sistema compacto.',
+        'A través de su panel de control es posible programar medidas de base del triángulo, lo que aporta flexibilidad para distintos formatos y necesidades de producción.',
+      ],
+      specsTitle: 'Características principales',
+      specs: [
+        'Equipo específico para producción de croissant.',
+        'Trabajo configurable entre 2 y 6 filas.',
+        'Producción horaria estimada entre 2000 y 6000 croissants.',
+        'Programación de medidas mediante panel de control.',
+        'Diseño compacto para líneas de trabajo con espacio optimizado.',
+      ],
+      notesTitle: 'Aplicaciones y consulta',
+      notes: [
+        'Pensado para obradores y líneas que trabajan croissant y viennoiserie de forma regular.',
+        'Útil para quienes necesitan mejorar ritmo, repetibilidad y presentación final del producto.',
+        'Consulta recomendada para evaluar configuración, espacio disponible y capacidad objetivo.',
+      ],
+    },
   },
   utensilios: {
     intro:
