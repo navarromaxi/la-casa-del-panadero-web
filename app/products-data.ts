@@ -33,6 +33,9 @@ export type GalleryItem = {
   title: string
   caption: string
   image?: string
+  secondaryImage?: string
+  buttonLabel?: string
+  href?: string
 }
 
 export const productCategories: readonly ProductCategory[] = [
@@ -108,24 +111,22 @@ export const productCategoryChildren: Record<string, ProductCategory[]> = produc
 
 export const utensiliosGalleryItems: readonly GalleryItem[] = [
   {
-    title: 'Utensilio 01',
-    caption: 'Espacio listo para sumar una foto real del catálogo de utensilios.',
+    title: 'Toda la línea de utensilios y accesorios',
+    caption:
+      'Podemos usar este espacio para destacar líneas completas, familias de productos o marcas puntuales con una presentación más visual.',
+    image: '/amasadora-start-plus.jpg',
+    secondaryImage: '/batidora-mr-evo.jpg',
+    buttonLabel: 'Consultar catálogo',
+    href: 'https://wa.me/59894009370',
   },
   {
-    title: 'Utensilio 02',
-    caption: 'Podemos mostrar herramientas de uso diario para panadería y confitería.',
-  },
-  {
-    title: 'Utensilio 03',
-    caption: 'El carrusel queda preparado para rotar imágenes sin recargar la landing.',
-  },
-  {
-    title: 'Utensilio 04',
-    caption: 'Cuando tengas las fotos, simplemente reemplazamos estos espacios.',
-  },
-  {
-    title: 'Utensilio 05',
-    caption: 'También puede usarse para destacar líneas o familias de utensilios.',
+    title: 'Herramientas para el trabajo diario',
+    caption:
+      'Una segunda placa puede enfocarse en accesorios de apoyo, utensilios específicos o propuestas comerciales para consulta directa.',
+    image: '/batidora-mr-evo.jpg',
+    secondaryImage: '/amasadora-start-plus.jpg',
+    buttonLabel: 'Ver opciones',
+    href: 'https://wa.me/59894009370',
   },
 ]
 

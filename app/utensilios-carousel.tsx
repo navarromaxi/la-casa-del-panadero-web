@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { useState } from 'react'
 import type { GalleryItem } from './products-data'
@@ -9,56 +10,90 @@ type UtensiliosCarouselProps = {
 }
 
 export function UtensiliosCarousel({ items }: UtensiliosCarouselProps) {
-  const [startIndex, setStartIndex] = useState(0)
-  const visibleCount = 2
+  const [activeIndex, setActiveIndex] = useState(0)
+  const activeItem = items[activeIndex]
 
-  const canGoPrev = startIndex > 0
-  const canGoNext = startIndex + visibleCount < items.length
-  const visibleItems = items.slice(startIndex, startIndex + visibleCount)
+  const goPrev = () => {
+    setActiveIndex((value) => (value === 0 ? items.length - 1 : value - 1))
+  }
+
+  const goNext = () => {
+    setActiveIndex((value) => (value === items.length - 1 ? 0 : value + 1))
+  }
 
   return (
-    <div className="utensilios-carousel">
-      <div className="utensilios-carousel-header">
-        <div>
-          <p className="eyebrow">Galería</p>
-          <h2>Algunos utensilios y líneas que podés consultar</h2>
-        </div>
-        <div className="utensilios-carousel-actions">
-          <button
-            type="button"
-            className="utensilios-carousel-button"
-            onClick={() => setStartIndex((value) => Math.max(0, value - visibleCount))}
-            disabled={!canGoPrev}
-            aria-label="Ver fotos anteriores"
-          >
-            <ChevronLeft size={18} />
-          </button>
-          <button
-            type="button"
-            className="utensilios-carousel-button"
-            onClick={() => setStartIndex((value) => Math.min(items.length - visibleCount, value + visibleCount))}
-            disabled={!canGoNext}
-            aria-label="Ver fotos siguientes"
-          >
-            <ChevronRight size={18} />
-          </button>
-        </div>
-      </div>
+    <div className="utensilios-hero-slider">
+      <div className="utensilios-hero-slide">
+        <div className="utensilios-hero-overlay" />
 
-      <div className="utensilios-carousel-track">
-        {visibleItems.map((item, index) => (
-          <article className="utensilios-slide" key={`${item.title}-${index}`}>
-            <div className="utensilios-slide-media">
-              <div className="utensilios-slide-placeholder">
-                <span>{item.title}</span>
-              </div>
-            </div>
-            <div className="utensilios-slide-copy">
-              <strong>{item.title}</strong>
-              <p>{item.caption}</p>
-            </div>
-          </article>
-        ))}
+        <div className="utensilios-hero-content">
+          <div className="utensilios-hero-copy">
+            <p className="eyebrow">Utensilios</p>
+            <h2>{activeItem.title}</h2>
+            <p>{activeItem.caption}</p>
+            {activeItem.buttonLabel ? (
+              <a
+                className="utensilios-hero-button"
+                href={activeItem.href ?? 'https://wa.me/59894009370'}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {activeItem.buttonLabel}
+              </a>
+            ) : null}
+          </div>
+
+          <div className="utensilios-hero-media">
+            {activeItem.secondaryImage ? (
+              <Image
+                src={activeItem.secondaryImage}
+                alt=""
+                width={900}
+                height={1200}
+                className="utensilios-hero-image utensils-hero-image-secondary"
+              />
+            ) : null}
+            {activeItem.image ? (
+              <Image
+                src={activeItem.image}
+                alt={activeItem.title}
+                width={900}
+                height={1200}
+                className="utensilios-hero-image utensils-hero-image-primary"
+                priority
+              />
+            ) : null}
+          </div>
+        </div>
+
+        <button
+          type="button"
+          className="utensilios-hero-nav utensils-hero-nav-left"
+          onClick={goPrev}
+          aria-label="Ver slide anterior"
+        >
+          <ChevronLeft size={24} />
+        </button>
+        <button
+          type="button"
+          className="utensilios-hero-nav utensils-hero-nav-right"
+          onClick={goNext}
+          aria-label="Ver slide siguiente"
+        >
+          <ChevronRight size={24} />
+        </button>
+
+        <div className="utensilios-hero-dots">
+          {items.map((item, index) => (
+            <button
+              key={`${item.title}-${index}`}
+              type="button"
+              className={`utensilios-hero-dot${index === activeIndex ? ' is-active' : ''}`}
+              onClick={() => setActiveIndex(index)}
+              aria-label={`Ir al slide ${index + 1}`}
+            />
+          ))}
+        </div>
       </div>
     </div>
   )
