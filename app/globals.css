@@ -1150,11 +1150,14 @@ h3,
 
 .utensilios-hero-media {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   min-height: 520px;
+  padding: 0 72px;
 }
 
 .utensilios-hero-image {
-  position: absolute;
   width: auto;
   height: auto;
   object-fit: contain;
@@ -1162,18 +1165,8 @@ h3,
 }
 
 .utensilios-hero-image-primary {
-  right: 0;
-  bottom: -8px;
-  max-width: min(52vw, 680px);
+  max-width: min(48vw, 620px);
   max-height: 580px;
-}
-
-.utensilios-hero-image-secondary {
-  left: 0;
-  bottom: 26px;
-  max-width: min(34vw, 420px);
-  max-height: 380px;
-  opacity: 0.92;
 }
 
 .utensilios-hero-nav {
@@ -1195,11 +1188,11 @@ h3,
 }
 
 .utensilios-hero-nav-left {
-  left: 22px;
+  left: 8px;
 }
 
 .utensilios-hero-nav-right {
-  right: 22px;
+  right: 8px;
 }
 
 .utensilios-hero-dots {
@@ -1585,20 +1578,12 @@ h3,
 
   .utensilios-hero-media {
     min-height: 420px;
+    padding: 0 56px;
   }
 
   .utensilios-hero-image-primary {
-    right: 8px;
-    left: auto;
     max-width: min(76vw, 420px);
     max-height: 360px;
-  }
-
-  .utensilios-hero-image-secondary {
-    left: 0;
-    bottom: 0;
-    max-width: min(52vw, 280px);
-    max-height: 240px;
   }
 
   .utensilios-hero-nav {
@@ -1691,16 +1676,12 @@ h3,
 
   .utensilios-hero-media {
     min-height: 320px;
+    padding: 0 42px;
   }
 
   .utensilios-hero-image-primary {
     max-width: min(82vw, 340px);
     max-height: 280px;
-  }
-
-  .utensilios-hero-image-secondary {
-    max-width: min(54vw, 200px);
-    max-height: 180px;
   }
 
   .utensilios-hero-dots {

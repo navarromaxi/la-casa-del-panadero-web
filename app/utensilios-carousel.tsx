@@ -44,15 +44,14 @@ export function UtensiliosCarousel({ items }: UtensiliosCarouselProps) {
           </div>
 
           <div className="utensilios-hero-media">
-            {activeItem.secondaryImage ? (
-              <Image
-                src={activeItem.secondaryImage}
-                alt=""
-                width={900}
-                height={1200}
-                className="utensilios-hero-image utensils-hero-image-secondary"
-              />
-            ) : null}
+            <button
+              type="button"
+              className="utensilios-hero-nav utensils-hero-nav-left"
+              onClick={goPrev}
+              aria-label="Ver slide anterior"
+            >
+              <ChevronLeft size={24} />
+            </button>
             {activeItem.image ? (
               <Image
                 src={activeItem.image}
@@ -63,25 +62,16 @@ export function UtensiliosCarousel({ items }: UtensiliosCarouselProps) {
                 priority
               />
             ) : null}
+            <button
+              type="button"
+              className="utensilios-hero-nav utensils-hero-nav-right"
+              onClick={goNext}
+              aria-label="Ver slide siguiente"
+            >
+              <ChevronRight size={24} />
+            </button>
           </div>
         </div>
-
-        <button
-          type="button"
-          className="utensilios-hero-nav utensils-hero-nav-left"
-          onClick={goPrev}
-          aria-label="Ver slide anterior"
-        >
-          <ChevronLeft size={24} />
-        </button>
-        <button
-          type="button"
-          className="utensilios-hero-nav utensils-hero-nav-right"
-          onClick={goNext}
-          aria-label="Ver slide siguiente"
-        >
-          <ChevronRight size={24} />
-        </button>
 
         <div className="utensilios-hero-dots">
           {items.map((item, index) => (
