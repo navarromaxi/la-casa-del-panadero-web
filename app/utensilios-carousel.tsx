@@ -31,16 +31,6 @@ export function UtensiliosCarousel({ items }: UtensiliosCarouselProps) {
             <p className="eyebrow">Utensilios</p>
             <h2>{activeItem.title}</h2>
             <p>{activeItem.caption}</p>
-            {activeItem.buttonLabel ? (
-              <a
-                className="utensilios-hero-button"
-                href={activeItem.href ?? 'https://wa.me/59894009370'}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {activeItem.buttonLabel}
-              </a>
-            ) : null}
           </div>
 
           <div className="utensilios-hero-media">

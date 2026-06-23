@@ -1132,23 +1132,6 @@ h3,
   font-size: 1.08rem;
 }
 
-.utensilios-hero-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 64px;
-  margin-top: 24px;
-  padding: 0 34px;
-  border-radius: 24px;
-  background: #fff;
-  color: #0f1620;
-  font-family: var(--font-heading), sans-serif;
-  font-size: 1.2rem;
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  box-shadow: 0 18px 34px rgba(0, 0, 0, 0.16);
-}
-
 .utensilios-hero-media {
   position: relative;
   display: flex;
@@ -1207,7 +1190,7 @@ h3,
 }
 
 .utensilios-hero-nav-right {
-  right: 24px;
+  right: -28px;
 }
 
 .utensilios-hero-dots {
@@ -1585,12 +1568,6 @@ h3,
     font-size: 2.9rem;
   }
 
-  .utensilios-hero-button {
-    min-height: 60px;
-    border-radius: 20px;
-    font-size: 1.05rem;
-  }
-
   .utensilios-hero-media {
     min-height: 320px;
     padding: 0 62px;
@@ -1609,6 +1586,10 @@ h3,
   .utensilios-hero-nav {
     width: 50px;
     height: 50px;
+  }
+
+  .utensilios-hero-nav-right {
+    right: 6px;
   }
 
   .product-image-frame {
