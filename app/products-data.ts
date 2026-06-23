@@ -114,7 +114,7 @@ export const utensiliosGalleryItems: readonly GalleryItem[] = [
     title: 'Toda la línea de utensilios y accesorios',
     caption:
       'Podemos usar este espacio para destacar líneas completas, familias de productos o marcas puntuales con una presentación más visual.',
-    image: '/utensilio-laminadora.jpg',
+    image: '/utensilio-laminadora-recorte.png',
     buttonLabel: 'Consultar catálogo',
     href: 'https://wa.me/59894009370',
   },
@@ -122,7 +122,7 @@ export const utensiliosGalleryItems: readonly GalleryItem[] = [
     title: 'Equipos y accesorios para producción',
     caption:
       'También podemos usar esta sección para mostrar líneas complementarias y resolver consultas puntuales según necesidad de trabajo.',
-    image: '/utensilio-cortadora.jpeg',
+    image: '/utensilio-grupo-croissant-recorte.png',
     buttonLabel: 'Ver opciones',
     href: 'https://wa.me/59894009370',
   },
@@ -130,7 +130,7 @@ export const utensiliosGalleryItems: readonly GalleryItem[] = [
     title: 'Soluciones complementarias para el obrador',
     caption:
       'La idea es dejar un espacio flexible donde después podamos sumar más fotos reales de utensilios o equipos de apoyo.',
-    image: '/utensilio-abatidor.png',
+    image: '/utensilio-armadora-recorte.png',
     buttonLabel: 'Consultar disponibilidad',
     href: 'https://wa.me/59894009370',
   },

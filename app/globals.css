@@ -1165,10 +1165,9 @@ h3,
   justify-content: center;
   width: min(100%, 560px);
   height: 390px;
-  padding: 18px;
+  padding: 12px 18px;
   border-radius: 24px;
-  background: #fff;
-  box-shadow: 0 24px 40px rgba(10, 21, 33, 0.18);
+  background: transparent;
 }
 
 .utensilios-hero-image {
@@ -1181,6 +1180,7 @@ h3,
 .utensilios-hero-image-primary {
   max-width: 100%;
   max-height: 100%;
+  object-position: center;
 }
 
 .utensilios-hero-nav {
