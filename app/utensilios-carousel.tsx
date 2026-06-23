@@ -52,16 +52,18 @@ export function UtensiliosCarousel({ items }: UtensiliosCarouselProps) {
             >
               <ChevronLeft size={24} />
             </button>
-            {activeItem.image ? (
-              <Image
-                src={activeItem.image}
-                alt={activeItem.title}
-                width={900}
-                height={1200}
-                className="utensilios-hero-image utensils-hero-image-primary"
-                priority
-              />
-            ) : null}
+            <div className="utensilios-hero-image-stage">
+              {activeItem.image ? (
+                <Image
+                  src={activeItem.image}
+                  alt={activeItem.title}
+                  width={1200}
+                  height={1200}
+                  className="utensilios-hero-image utensils-hero-image-primary"
+                  priority
+                />
+              ) : null}
+            </div>
             <button
               type="button"
               className="utensilios-hero-nav utensils-hero-nav-right"

@@ -114,18 +114,24 @@ export const utensiliosGalleryItems: readonly GalleryItem[] = [
     title: 'Toda la línea de utensilios y accesorios',
     caption:
       'Podemos usar este espacio para destacar líneas completas, familias de productos o marcas puntuales con una presentación más visual.',
-    image: '/amasadora-start-plus.jpg',
-    secondaryImage: '/batidora-mr-evo.jpg',
+    image: '/utensilio-laminadora.jpg',
     buttonLabel: 'Consultar catálogo',
     href: 'https://wa.me/59894009370',
   },
   {
-    title: 'Herramientas para el trabajo diario',
+    title: 'Equipos y accesorios para producción',
     caption:
-      'Una segunda placa puede enfocarse en accesorios de apoyo, utensilios específicos o propuestas comerciales para consulta directa.',
-    image: '/batidora-mr-evo.jpg',
-    secondaryImage: '/amasadora-start-plus.jpg',
+      'También podemos usar esta sección para mostrar líneas complementarias y resolver consultas puntuales según necesidad de trabajo.',
+    image: '/utensilio-cortadora.jpeg',
     buttonLabel: 'Ver opciones',
+    href: 'https://wa.me/59894009370',
+  },
+  {
+    title: 'Soluciones complementarias para el obrador',
+    caption:
+      'La idea es dejar un espacio flexible donde después podamos sumar más fotos reales de utensilios o equipos de apoyo.',
+    image: '/utensilio-abatidor.png',
+    buttonLabel: 'Consultar disponibilidad',
     href: 'https://wa.me/59894009370',
   },
 ]

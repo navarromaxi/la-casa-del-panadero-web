@@ -1155,7 +1155,20 @@ h3,
   align-items: center;
   justify-content: center;
   min-height: 430px;
-  padding: 0 86px;
+  padding: 0 92px;
+  overflow: visible;
+}
+
+.utensilios-hero-image-stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min(100%, 560px);
+  height: 390px;
+  padding: 18px;
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 24px 40px rgba(10, 21, 33, 0.18);
 }
 
 .utensilios-hero-image {
@@ -1166,8 +1179,8 @@ h3,
 }
 
 .utensilios-hero-image-primary {
-  max-width: min(44vw, 520px);
-  max-height: 430px;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .utensilios-hero-nav {
@@ -1190,11 +1203,11 @@ h3,
 }
 
 .utensilios-hero-nav-left {
-  left: 18px;
+  left: 24px;
 }
 
 .utensilios-hero-nav-right {
-  right: 18px;
+  right: 24px;
 }
 
 .utensilios-hero-dots {
@@ -1580,12 +1593,17 @@ h3,
 
   .utensilios-hero-media {
     min-height: 320px;
-    padding: 0 56px;
+    padding: 0 62px;
+  }
+
+  .utensilios-hero-image-stage {
+    width: min(100%, 380px);
+    height: 280px;
   }
 
   .utensilios-hero-image-primary {
-    max-width: min(72vw, 360px);
-    max-height: 300px;
+    max-width: 100%;
+    max-height: 100%;
   }
 
   .utensilios-hero-nav {
@@ -1678,12 +1696,18 @@ h3,
 
   .utensilios-hero-media {
     min-height: 260px;
-    padding: 0 50px;
+    padding: 0 52px;
+  }
+
+  .utensilios-hero-image-stage {
+    width: min(100%, 260px);
+    height: 220px;
+    padding: 12px;
   }
 
   .utensilios-hero-image-primary {
-    max-width: min(78vw, 280px);
-    max-height: 220px;
+    max-width: 100%;
+    max-height: 100%;
   }
 
   .utensilios-hero-dots {
