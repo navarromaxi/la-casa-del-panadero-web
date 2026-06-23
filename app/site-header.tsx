@@ -21,6 +21,12 @@ export function SiteHeader() {
   const activeParentSlug = activeCategory?.parentSlug ?? activeCategory?.slug ?? null
   const specialChildren = productCategoryChildren['maquinaria-especial'] ?? []
 
+  const closeMobileMenu = () => {
+    setMenuOpen(false)
+    setProductsOpen(Boolean(activeCategorySlug))
+    setSpecialProductsOpen(activeParentSlug === 'maquinaria-especial')
+  }
+
   useEffect(() => {
     setMenuOpen(false)
     setProductsOpen(Boolean(activeCategorySlug))
@@ -135,7 +141,9 @@ export function SiteHeader() {
         {menuOpen ? (
           <div className="mobile-nav">
             <div className="container mobile-nav-inner">
-              <a href="/#propuesta">Propuesta</a>
+              <a href="/#propuesta" onClick={closeMobileMenu}>
+                Propuesta
+              </a>
               <button
                 type="button"
                 className={`mobile-submenu-toggle${productsOpen ? ' is-open' : ''}`}
@@ -157,6 +165,7 @@ export function SiteHeader() {
                           key={category.slug}
                           href={`/productos/${category.slug}`}
                           className={activeCategorySlug === category.slug ? 'mobile-submenu-item-active' : undefined}
+                          onClick={closeMobileMenu}
                         >
                           {category.name}
                         </Link>
@@ -169,6 +178,7 @@ export function SiteHeader() {
                           <Link
                             href={`/productos/${category.slug}`}
                             className={isParentActive ? 'mobile-submenu-item-active mobile-submenu-parent-link' : 'mobile-submenu-parent-link'}
+                            onClick={closeMobileMenu}
                           >
                             {category.name}
                           </Link>
@@ -188,6 +198,7 @@ export function SiteHeader() {
                                 key={child.slug}
                                 href={`/productos/${child.slug}`}
                                 className={activeCategorySlug === child.slug ? 'mobile-submenu-item-active' : undefined}
+                                onClick={closeMobileMenu}
                               >
                                 {child.name}
                               </Link>
@@ -199,9 +210,15 @@ export function SiteHeader() {
                   })}
                 </div>
               ) : null}
-              <a href="/#service">Service</a>
-              <a href="/#historia">Historia</a>
-              <a href="/#contacto">Contacto</a>
+              <a href="/#service" onClick={closeMobileMenu}>
+                Service
+              </a>
+              <a href="/#historia" onClick={closeMobileMenu}>
+                Historia
+              </a>
+              <a href="/#contacto" onClick={closeMobileMenu}>
+                Contacto
+              </a>
               <a className="btn btn-dark mobile-whatsapp" href="https://wa.me/59894009370" target="_blank" rel="noreferrer">
                 WhatsApp ventas
               </a>

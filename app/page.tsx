@@ -31,6 +31,9 @@ const brands = [
   { name: 'RAM', src: '/ram.png', width: 180, height: 84 },
 ]
 
+const featuredBrands = brands.slice(0, 5)
+const moreBrands = brands.slice(5)
+
 const highlights = [
   {
     title: 'Ofertas del mes',
@@ -93,6 +96,26 @@ const showcaseItems = [
 export default function Home() {
   return (
     <main>
+      <section className="mobile-spotlight">
+        <div className="container">
+          <div className="mobile-spotlight-card">
+            <div className="mobile-spotlight-copy">
+              <p className="eyebrow">La Casa del Panadero</p>
+              <h2>Lo que vos necesitás</h2>
+              <p>Maquinaria, respaldo técnico y asesoramiento para mover tu producción.</p>
+            </div>
+            <Image
+              src="/utensilio-grupo-croissant-recorte.png"
+              alt="Maquinaria para panadería"
+              width={900}
+              height={900}
+              className="mobile-spotlight-image"
+              priority
+            />
+          </div>
+        </div>
+      </section>
+
       <section id="inicio" className="hero">
         <div className="container hero-grid">
           <div className="hero-copy">
@@ -160,7 +183,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="propuesta" className="features">
+      <section className="features">
         <div className="container feature-grid">
           {advantages.map((item) => (
             <Feature key={item.title} icon={item.icon} title={item.title} text={item.text} />
@@ -214,8 +237,8 @@ export default function Home() {
             Estas son algunas de las marcas que acompañan nuestro trabajo y refuerzan la confianza
             que brindamos en cada proyecto.
           </p>
-          <div className="logo-grid">
-            {brands.map((brand) => (
+          <div className="logo-grid brand-grid-mobile-base">
+            {featuredBrands.map((brand) => (
               <div className="logo-card brand-logo-card" key={brand.name}>
                 <Image
                   className="brand-logo-image"
@@ -227,10 +250,26 @@ export default function Home() {
               </div>
             ))}
           </div>
+          <details className="mobile-expand-section">
+            <summary className="mobile-expand-toggle">Ver más</summary>
+            <div className="logo-grid mobile-expand-content">
+              {moreBrands.map((brand) => (
+                <div className="logo-card brand-logo-card" key={brand.name}>
+                  <Image
+                    className="brand-logo-image"
+                    src={brand.src}
+                    alt={brand.name}
+                    width={brand.width}
+                    height={brand.height}
+                  />
+                </div>
+              ))}
+            </div>
+          </details>
         </div>
       </section>
 
-      <section className="section alt">
+      <section id="propuesta" className="section alt">
         <div className="container showcase-grid">
           <div>
             <p className="eyebrow">Qué resolvemos</p>
@@ -297,42 +336,47 @@ export default function Home() {
             dando nuestros primeros pasos fabricando equipos nacionales como sobadoras, orgullosos
             de contribuir al desarrollo de la industria uruguaya.
           </p>
-          <p>
-            La confianza de nuestros clientes fue el motor que impulsó nuestro crecimiento. Gracias
-            a ella, ampliamos nuestras fronteras, incorporamos nuevas tecnologías y establecimos
-            alianzas estratégicas con reconocidas marcas internacionales, acercando al mercado local
-            equipamiento de primer nivel.
-          </p>
-          <p>
-            Hoy somos una empresa consolidada y referente en el sector, especializada en la
-            comercialización, instalación y servicio técnico de maquinaria para panaderías,
-            confiterías, supermercados, plantas industriales y emprendimientos gastronómicos en
-            general. Además, contamos con la representación de destacadas marcas del mundo, entre
-            ellas la prestigiosa firma italiana Bassanina, reconocida por su innovación y
-            excelencia.
-          </p>
-          <p>
-            Pero más allá de los equipos que ofrecemos, creemos que nuestro mayor valor está en las
-            personas. En escuchar, asesorar y acompañar a cada cliente como si su proyecto fuera
-            también parte del nuestro. Porque entendemos que detrás de cada panadería, confitería,
-            supermercado, panificadora y cada emprendimiento, hay historias de trabajo, esfuerzo y
-            sueños por cumplir.
-          </p>
-          <p>
-            La calidad, la atención personalizada, el compromiso y el respaldo técnico han sido los
-            pilares que nos han acompañado durante todos estos años y que continúan guiando nuestro
-            camino.
-          </p>
-          <p>
-            En La Casa del Panadero no solo vendemos maquinaria: construimos relaciones de
-            confianza, brindamos soluciones y seguimos trabajando, como desde el primer día, para
-            estar al lado de quienes hacen crecer esta gran industria.
-          </p>
-          <blockquote className="story-quote">
-            “No nos vendieron solo una máquina; nos dieron respaldo, experiencia y la tranquilidad
-            de saber que siempre están cuando los necesitamos.”
-          </blockquote>
-          <p className="story-signoff">Ese es, y seguirá siendo, nuestro mayor orgullo.</p>
+          <details className="mobile-expand-section story-more">
+            <summary className="mobile-expand-toggle">Ver más</summary>
+            <div className="mobile-expand-content">
+              <p>
+                La confianza de nuestros clientes fue el motor que impulsó nuestro crecimiento.
+                Gracias a ella, ampliamos nuestras fronteras, incorporamos nuevas tecnologías y
+                establecimos alianzas estratégicas con reconocidas marcas internacionales,
+                acercando al mercado local equipamiento de primer nivel.
+              </p>
+              <p>
+                Hoy somos una empresa consolidada y referente en el sector, especializada en la
+                comercialización, instalación y servicio técnico de maquinaria para panaderías,
+                confiterías, supermercados, plantas industriales y emprendimientos gastronómicos en
+                general. Además, contamos con la representación de destacadas marcas del mundo,
+                entre ellas la prestigiosa firma italiana Bassanina, reconocida por su innovación y
+                excelencia.
+              </p>
+              <p>
+                Pero más allá de los equipos que ofrecemos, creemos que nuestro mayor valor está en
+                las personas. En escuchar, asesorar y acompañar a cada cliente como si su proyecto
+                fuera también parte del nuestro. Porque entendemos que detrás de cada panadería,
+                confitería, supermercado, panificadora y cada emprendimiento, hay historias de
+                trabajo, esfuerzo y sueños por cumplir.
+              </p>
+              <p>
+                La calidad, la atención personalizada, el compromiso y el respaldo técnico han sido
+                los pilares que nos han acompañado durante todos estos años y que continúan guiando
+                nuestro camino.
+              </p>
+              <p>
+                En La Casa del Panadero no solo vendemos maquinaria: construimos relaciones de
+                confianza, brindamos soluciones y seguimos trabajando, como desde el primer día,
+                para estar al lado de quienes hacen crecer esta gran industria.
+              </p>
+              <blockquote className="story-quote">
+                “No nos vendieron solo una máquina; nos dieron respaldo, experiencia y la
+                tranquilidad de saber que siempre están cuando los necesitamos.”
+              </blockquote>
+              <p className="story-signoff">Ese es, y seguirá siendo, nuestro mayor orgullo.</p>
+            </div>
+          </details>
         </div>
       </section>
 
