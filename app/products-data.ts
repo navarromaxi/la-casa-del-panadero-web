@@ -330,7 +330,7 @@ export const categoryDetails: Record<string, CategoryDetails> = {
         name: 'Laminadora automática',
         brand: 'Pasticc',
         model: 'Tower 660 TS',
-        image: '/laminadora-tower-660-ts.jpg',
+        image: '/laminadora-tower-660-ts-real.jpg',
         imageAlt: 'Laminadora automática Pasticc Tower 660 TS',
         badge: 'Modelo destacado',
         shortDescription:
@@ -362,7 +362,7 @@ export const categoryDetails: Record<string, CategoryDetails> = {
         name: 'Laminadora manual',
         brand: 'Pasticc',
         model: 'Classic 600',
-        image: '/laminadora-classic-600.jpg',
+        image: '/laminadora-classic-600-real.jpeg',
         imageAlt: 'Laminadora Pasticc Classic 600',
         badge: 'Modelo destacado',
         shortDescription:
@@ -393,7 +393,7 @@ export const categoryDetails: Record<string, CategoryDetails> = {
         name: 'Laminadora semiautomática',
         brand: 'Pasticc',
         model: 'Beta Tower 660',
-        image: '/laminadora-beta-tower-660.jpg',
+        image: '/laminadora-beta-tower-660-real.jpg',
         imageAlt: 'Laminadora semiautomática Pasticc Beta Tower 660',
         badge: 'Modelo destacado',
         shortDescription:
