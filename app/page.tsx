@@ -41,7 +41,7 @@ const highlights = [
   },
   {
     title: 'Equipos recomendados',
-    text: 'Bloque para rotar maquinaria, productos de cuadra o repuestos con foco comercial.',
+    text: 'Bloque para rotar maquinaria, productos de cuadra o líneas destacadas con foco comercial.',
   },
   {
     title: 'Nueva financiación',
@@ -74,7 +74,7 @@ const advantages = [
 
 const process = [
   'Contanos qué necesitás para tu panadería, confitería o cocina de producción.',
-  'Te orientamos sobre equipos, repuestos o productos de cuadra según tu escala.',
+  'Te orientamos sobre equipos y productos de cuadra según tu escala.',
   'Coordinamos presupuesto, entrega y soporte técnico si el equipo lo requiere.',
 ]
 
@@ -84,8 +84,8 @@ const showcaseItems = [
     text: 'Te ayudamos a definir maquinaria según el tamaño de tu operación, el ritmo de trabajo y la etapa en la que está tu negocio.',
   },
   {
-    title: 'Reposición de repuestos, insumos y accesorios de uso diario.',
-    text: 'Centralizamos soluciones para el funcionamiento cotidiano, desde piezas de recambio hasta complementos necesarios para no frenar la producción.',
+    title: 'Productos de cuadra, insumos y accesorios de uso diario.',
+    text: 'Centralizamos soluciones para el funcionamiento cotidiano con insumos y complementos necesarios para no frenar la producción.',
   },
   {
     title: 'Asistencia técnica cuando el equipo necesita mantenimiento o ajuste.',
@@ -123,12 +123,12 @@ export default function Home() {
             <h1>Todo para tu negocio, con respaldo técnico y atención de verdad.</h1>
             <p className="lead">
               Desde 1989 acompañamos a negocios del rubro con maquinaria, productos de cuadra,
-              repuestos y asesoramiento cercano para que cada compra tenga sentido operativo.
+              servicio técnico y asesoramiento cercano para que cada compra tenga sentido operativo.
             </p>
             <div className="hero-points">
               <span>Venta de maquinaria</span>
               <span>Productos de cuadra</span>
-              <span>Repuestos y service</span>
+              <span>Service técnico</span>
             </div>
             <div className="hero-actions">
               <a className="btn btn-primary" href="https://wa.me/59894009370" target="_blank" rel="noreferrer">
