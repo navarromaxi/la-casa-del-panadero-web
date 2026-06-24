@@ -266,6 +266,29 @@ h3,
   display: block;
 }
 
+.desktop-only {
+  display: block;
+}
+
+.mobile-only {
+  display: none;
+}
+
+.story-full.desktop-only {
+  display: none;
+}
+
+@media (min-width: 761px) {
+  .story-more > summary {
+    display: none;
+  }
+
+  .story-more > .mobile-expand-content {
+    display: block !important;
+    margin-top: 16px;
+  }
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -1384,6 +1407,14 @@ h3,
 }
 
 @media (max-width: 760px) {
+  .desktop-only {
+    display: none;
+  }
+
+  .mobile-only {
+    display: block;
+  }
+
   .mobile-spotlight {
     display: block;
     padding: 18px 0 0;

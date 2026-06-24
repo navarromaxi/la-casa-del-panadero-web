@@ -237,7 +237,21 @@ export default function Home() {
             Estas son algunas de las marcas que acompañan nuestro trabajo y refuerzan la confianza
             que brindamos en cada proyecto.
           </p>
-          <div className="logo-grid brand-grid-mobile-base">
+          <div className="logo-grid desktop-only">
+            {brands.map((brand) => (
+              <div className="logo-card brand-logo-card" key={brand.name}>
+                <Image
+                  className="brand-logo-image"
+                  src={brand.src}
+                  alt={brand.name}
+                  width={brand.width}
+                  height={brand.height}
+                />
+              </div>
+            ))}
+          </div>
+          <div className="mobile-only">
+            <div className="logo-grid brand-grid-mobile-base">
             {featuredBrands.map((brand) => (
               <div className="logo-card brand-logo-card" key={brand.name}>
                 <Image
@@ -250,9 +264,9 @@ export default function Home() {
               </div>
             ))}
           </div>
-          <details className="mobile-expand-section">
+            <details className="mobile-expand-section">
             <summary className="mobile-expand-toggle">Ver más</summary>
-            <div className="logo-grid mobile-expand-content">
+              <div className="logo-grid mobile-expand-content">
               {moreBrands.map((brand) => (
                 <div className="logo-card brand-logo-card" key={brand.name}>
                   <Image
@@ -264,8 +278,9 @@ export default function Home() {
                   />
                 </div>
               ))}
-            </div>
-          </details>
+              </div>
+            </details>
+          </div>
         </div>
       </section>
 
@@ -336,6 +351,44 @@ export default function Home() {
             dando nuestros primeros pasos fabricando equipos nacionales como sobadoras, orgullosos
             de contribuir al desarrollo de la industria uruguaya.
           </p>
+          <div className="story-full desktop-only">
+            <p>
+              La confianza de nuestros clientes fue el motor que impulsÃ³ nuestro crecimiento.
+              Gracias a ella, ampliamos nuestras fronteras, incorporamos nuevas tecnologÃ­as y
+              establecimos alianzas estratÃ©gicas con reconocidas marcas internacionales,
+              acercando al mercado local equipamiento de primer nivel.
+            </p>
+            <p>
+              Hoy somos una empresa consolidada y referente en el sector, especializada en la
+              comercializaciÃ³n, instalaciÃ³n y servicio tÃ©cnico de maquinaria para panaderÃ­as,
+              confiterÃ­as, supermercados, plantas industriales y emprendimientos gastronÃ³micos en
+              general. AdemÃ¡s, contamos con la representaciÃ³n de destacadas marcas del mundo,
+              entre ellas la prestigiosa firma italiana Bassanina, reconocida por su innovaciÃ³n y
+              excelencia.
+            </p>
+            <p>
+              Pero mÃ¡s allÃ¡ de los equipos que ofrecemos, creemos que nuestro mayor valor estÃ¡ en
+              las personas. En escuchar, asesorar y acompaÃ±ar a cada cliente como si su proyecto
+              fuera tambiÃ©n parte del nuestro. Porque entendemos que detrÃ¡s de cada panaderÃ­a,
+              confiterÃ­a, supermercado, panificadora y cada emprendimiento, hay historias de
+              trabajo, esfuerzo y sueÃ±os por cumplir.
+            </p>
+            <p>
+              La calidad, la atenciÃ³n personalizada, el compromiso y el respaldo tÃ©cnico han sido
+              los pilares que nos han acompaÃ±ado durante todos estos aÃ±os y que continÃºan guiando
+              nuestro camino.
+            </p>
+            <p>
+              En La Casa del Panadero no solo vendemos maquinaria: construimos relaciones de
+              confianza, brindamos soluciones y seguimos trabajando, como desde el primer dÃ­a,
+              para estar al lado de quienes hacen crecer esta gran industria.
+            </p>
+            <blockquote className="story-quote">
+              â€œNo nos vendieron solo una mÃ¡quina; nos dieron respaldo, experiencia y la
+              tranquilidad de saber que siempre estÃ¡n cuando los necesitamos.â€
+            </blockquote>
+            <p className="story-signoff">Ese es, y seguirÃ¡ siendo, nuestro mayor orgullo.</p>
+          </div>
           <details className="mobile-expand-section story-more">
             <summary className="mobile-expand-toggle">Ver más</summary>
             <div className="mobile-expand-content">
