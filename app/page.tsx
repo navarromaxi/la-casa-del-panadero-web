@@ -93,6 +93,24 @@ const showcaseItems = [
   },
 ]
 
+const storyIntro = [
+  'En La Casa del Panadero llevamos mas de 35 anos acompanando los suenos, desafios y el crecimiento de quienes apuestan cada dia por el mundo de la panificacion y la gastronomia.',
+  'Nuestra historia comenzo en 1989, con una conviccion muy clara: brindar soluciones confiables y de calidad a traves de la reparacion de maquinaria industrial y semiindustrial. Con esfuerzo, dedicacion y una fuerte vocacion de servicio, fuimos dando nuestros primeros pasos fabricando equipos nacionales como sobadoras, orgullosos de contribuir al desarrollo de la industria uruguaya.',
+]
+
+const storyBody = [
+  'La confianza de nuestros clientes fue el motor que impulso nuestro crecimiento. Gracias a ella, ampliamos nuestras fronteras, incorporamos nuevas tecnologias y establecimos alianzas estrategicas con reconocidas marcas internacionales, acercando al mercado local equipamiento de primer nivel.',
+  'Hoy somos una empresa consolidada y referente en el sector, especializada en la comercializacion, instalacion y servicio tecnico de maquinaria para panaderias, confiterias, supermercados, plantas industriales y emprendimientos gastronomicos en general. Ademas, contamos con la representacion de destacadas marcas del mundo, entre ellas la prestigiosa firma italiana Bassanina, reconocida por su innovacion y excelencia.',
+  'Pero mas alla de los equipos que ofrecemos, creemos que nuestro mayor valor esta en las personas. En escuchar, asesorar y acompanar a cada cliente como si su proyecto fuera tambien parte del nuestro. Porque entendemos que detras de cada panaderia, confiteria, supermercado, panificadora y cada emprendimiento, hay historias de trabajo, esfuerzo y suenos por cumplir.',
+  'La calidad, la atencion personalizada, el compromiso y el respaldo tecnico han sido los pilares que nos han acompanado durante todos estos anos y que continuan guiando nuestro camino.',
+  'En La Casa del Panadero no solo vendemos maquinaria: construimos relaciones de confianza, brindamos soluciones y seguimos trabajando, como desde el primer dia, para estar al lado de quienes hacen crecer esta gran industria.',
+]
+
+const storyQuote =
+  '"No nos vendieron solo una maquina; nos dieron respaldo, experiencia y la tranquilidad de saber que siempre estan cuando los necesitamos."'
+
+const storySignoff = 'Ese es, y seguira siendo, nuestro mayor orgullo.'
+
 export default function Home() {
   return (
     <main>
@@ -389,8 +407,63 @@ export default function Home() {
             </blockquote>
             <p className="story-signoff">Ese es, y seguirÃ¡ siendo, nuestro mayor orgullo.</p>
           </div>
-          <details className="mobile-expand-section story-more">
-            <summary className="mobile-expand-toggle">Ver más</summary>
+          <div className="story-desktop-copy desktop-only legacy-story-desktop">
+            <p>
+              La confianza de nuestros clientes fue el motor que impulsó nuestro crecimiento.
+              Gracias a ella, ampliamos nuestras fronteras, incorporamos nuevas tecnologías y
+              establecimos alianzas estratégicas con reconocidas marcas internacionales,
+              acercando al mercado local equipamiento de primer nivel.
+            </p>
+            <p>
+              Hoy somos una empresa consolidada y referente en el sector, especializada en la
+              comercialización, instalación y servicio técnico de maquinaria para panaderías,
+              confiterías, supermercados, plantas industriales y emprendimientos gastronómicos en
+              general. Además, contamos con la representación de destacadas marcas del mundo,
+              entre ellas la prestigiosa firma italiana Bassanina, reconocida por su innovación y
+              excelencia.
+            </p>
+            <p>
+              Pero más allá de los equipos que ofrecemos, creemos que nuestro mayor valor está en
+              las personas. En escuchar, asesorar y acompañar a cada cliente como si su proyecto
+              fuera también parte del nuestro. Porque entendemos que detrás de cada panadería,
+              confitería, supermercado, panificadora y cada emprendimiento, hay historias de
+              trabajo, esfuerzo y sueños por cumplir.
+            </p>
+            <p>
+              La calidad, la atención personalizada, el compromiso y el respaldo técnico han sido
+              los pilares que nos han acompañado durante todos estos años y que continúan guiando
+              nuestro camino.
+            </p>
+            <p>
+              En La Casa del Panadero no solo vendemos maquinaria: construimos relaciones de
+              confianza, brindamos soluciones y seguimos trabajando, como desde el primer día,
+              para estar al lado de quienes hacen crecer esta gran industria.
+            </p>
+            <blockquote className="story-quote">
+              “No nos vendieron solo una máquina; nos dieron respaldo, experiencia y la
+              tranquilidad de saber que siempre están cuando los necesitamos.”
+            </blockquote>
+            <p className="story-signoff">Ese es, y seguirá siendo, nuestro mayor orgullo.</p>
+          </div>
+          <div className="story-clean-copy desktop-only">
+            {storyBody.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+            <blockquote className="story-quote">{storyQuote}</blockquote>
+            <p className="story-signoff">{storySignoff}</p>
+          </div>
+          <details className="mobile-expand-section story-mobile-copy mobile-only">
+            <summary className="mobile-expand-toggle">Leer mas</summary>
+            <div className="mobile-expand-content">
+              {storyBody.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+              <blockquote className="story-quote">{storyQuote}</blockquote>
+              <p className="story-signoff">{storySignoff}</p>
+            </div>
+          </details>
+          <details className="mobile-expand-section story-more mobile-only legacy-story-mobile">
+            <summary className="mobile-expand-toggle">Leer más</summary>
             <div className="mobile-expand-content">
               <p>
                 La confianza de nuestros clientes fue el motor que impulsó nuestro crecimiento.
