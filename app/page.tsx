@@ -17,18 +17,24 @@ import { ContactForm } from './contact-form'
 import { topLevelProductCategories } from './products-data'
 
 const brands = [
-  { name: 'Bassanina Baking', src: '/bassanina-baking.png', width: 210, height: 84 },
-  { name: 'Colip', src: '/colip.png', width: 190, height: 78 },
-  { name: 'Delfin', src: '/delfin.png', width: 190, height: 78 },
-  { name: 'JAC', src: '/jac.png', width: 126, height: 126 },
-  { name: 'LP Group', src: '/lp-group.png', width: 180, height: 78 },
-  { name: 'Rueda Maquinaria', src: '/rueda-maquinaria.png', width: 200, height: 78 },
-  { name: 'Bake Off Italiana', src: '/bake-off.png', width: 210, height: 84 },
-  { name: 'Ciberpan', src: '/ciberpan.png', width: 190, height: 78 },
-  { name: 'Cool Water', src: '/cool-water.png', width: 210, height: 78 },
-  { name: 'Ferneto', src: '/ferneto.png', width: 210, height: 84 },
-  { name: 'Mamoli', src: '/mamoli.png', width: 180, height: 90 },
-  { name: 'RAM', src: '/ram.png', width: 180, height: 84 },
+  { name: 'Bassanina Baking', src: '/bassanina-baking.png', width: 210, height: 84, href: 'https://www.bassanina.com/en-us/' },
+  { name: 'LP Group', src: '/lp-group.png', width: 180, height: 78, href: 'https://www.lpgroup.it/es/' },
+  { name: 'RAM', src: '/ram.png', width: 180, height: 84, href: 'https://www.ram.com.pe/' },
+  { name: 'Delfin', src: '/delfin.png', width: 190, height: 78, href: 'https://www.delfingroupco.com.pe/' },
+  {
+    name: 'JAC',
+    src: '/jac.png',
+    width: 126,
+    height: 126,
+    href: 'https://jac.com.uy/empresa?gad_source=1&gad_campaignid=2085060885&gbraid=0AAAAACzhLakzzPK-G6a39CkqQobfbUTil&gclid=Cj0KCQjwxvjRBhC2ARIsAI7KJa154yTORVUp8uQGwr68uSzEMNtifW0PaeLYqOvIsAcqsH5NUY_4LUIaAll8EALw_wcB',
+  },
+  { name: 'Bake Off Italiana', src: '/bake-off.png', width: 210, height: 84, href: 'https://gastronomia.crandon.edu.uy/tag/bake-off-uruguay/' },
+  { name: 'Mamoli', src: '/mamoli.png', width: 180, height: 90, href: 'https://www.mamoli.com/' },
+  { name: 'Ferneto', src: '/ferneto.png', width: 210, height: 84, href: 'https://ferneto.com/es/bienvenido-ferneto/' },
+  { name: 'Ciberpan', src: '/ciberpan.png', width: 190, height: 78, href: 'https://ciberpan.com/' },
+  { name: 'Cool Water', src: '/cool-water.png', width: 210, height: 78, href: 'https://industrialcoldwater.cl/' },
+  { name: 'Rueda Maquinaria', src: '/rueda-maquinaria.png', width: 200, height: 78, href: 'https://ruedamaquinaria.com/es/' },
+  { name: 'Colip', src: '/colip.png', width: 190, height: 78, href: 'https://www.colip.com/es/' },
 ]
 
 const featuredBrands = brands.slice(0, 5)
@@ -63,7 +69,7 @@ const advantages = [
   {
     icon: <CreditCard size={20} />,
     title: 'Opciones de pago claras',
-    text: 'Contado, transferencia, cheques y tarjetas hasta en 6 pagos sin recargo.',
+    text: 'Contado, transferencia, cheques, crédito italiano y tarjetas hasta en 6 pagos sin recargo.',
   },
   {
     icon: <ShieldCheck size={20} />,
@@ -94,22 +100,22 @@ const showcaseItems = [
 ]
 
 const storyIntro = [
-  'En La Casa del Panadero llevamos mas de 35 anos acompanando los suenos, desafios y el crecimiento de quienes apuestan cada dia por el mundo de la panificacion y la gastronomia.',
-  'Nuestra historia comenzo en 1989, con una conviccion muy clara: brindar soluciones confiables y de calidad a traves de la reparacion de maquinaria industrial y semiindustrial. Con esfuerzo, dedicacion y una fuerte vocacion de servicio, fuimos dando nuestros primeros pasos fabricando equipos nacionales como sobadoras, orgullosos de contribuir al desarrollo de la industria uruguaya.',
+  'En La Casa del Panadero llevamos más de 35 años acompañando los sueños, desafíos y el crecimiento de quienes apuestan cada día por el mundo de la panificación y la gastronomía.',
+  'Nuestra historia comenzó en 1989, con una convicción muy clara: brindar soluciones confiables y de calidad a través de la reparación de maquinaria industrial y semiindustrial. Con esfuerzo, dedicación y una fuerte vocación de servicio, fuimos dando nuestros primeros pasos fabricando equipos nacionales como sobadoras, orgullosos de contribuir al desarrollo de la industria uruguaya.',
 ]
 
 const storyBody = [
-  'La confianza de nuestros clientes fue el motor que impulso nuestro crecimiento. Gracias a ella, ampliamos nuestras fronteras, incorporamos nuevas tecnologias y establecimos alianzas estrategicas con reconocidas marcas internacionales, acercando al mercado local equipamiento de primer nivel.',
-  'Hoy somos una empresa consolidada y referente en el sector, especializada en la comercializacion, instalacion y servicio tecnico de maquinaria para panaderias, confiterias, supermercados, plantas industriales y emprendimientos gastronomicos en general. Ademas, contamos con la representacion de destacadas marcas del mundo, entre ellas la prestigiosa firma italiana Bassanina, reconocida por su innovacion y excelencia.',
-  'Pero mas alla de los equipos que ofrecemos, creemos que nuestro mayor valor esta en las personas. En escuchar, asesorar y acompanar a cada cliente como si su proyecto fuera tambien parte del nuestro. Porque entendemos que detras de cada panaderia, confiteria, supermercado, panificadora y cada emprendimiento, hay historias de trabajo, esfuerzo y suenos por cumplir.',
-  'La calidad, la atencion personalizada, el compromiso y el respaldo tecnico han sido los pilares que nos han acompanado durante todos estos anos y que continuan guiando nuestro camino.',
-  'En La Casa del Panadero no solo vendemos maquinaria: construimos relaciones de confianza, brindamos soluciones y seguimos trabajando, como desde el primer dia, para estar al lado de quienes hacen crecer esta gran industria.',
+  'La confianza de nuestros clientes fue el motor que impulsó nuestro crecimiento. Gracias a ella, ampliamos nuestras fronteras, incorporamos nuevas tecnologías y establecimos alianzas estratégicas con reconocidas marcas internacionales, acercando al mercado local equipamiento de primer nivel.',
+  'Hoy somos una empresa consolidada y referente en el sector, especializada en la comercialización, instalación y servicio técnico de maquinaria para panaderías, confiterías, supermercados, plantas industriales y emprendimientos gastronómicos en general. Además, contamos con la representación de destacadas marcas del mundo, entre ellas la prestigiosa firma italiana Bassanina, reconocida por su innovación y excelencia.',
+  'Pero más allá de los equipos que ofrecemos, creemos que nuestro mayor valor está en las personas. En escuchar, asesorar y acompañar a cada cliente como si su proyecto fuera también parte del nuestro. Porque entendemos que detrás de cada panadería, confitería, supermercado, panificadora y cada emprendimiento, hay historias de trabajo, esfuerzo y sueños por cumplir.',
+  'La calidad, la atención personalizada, el compromiso y el respaldo técnico han sido los pilares que nos han acompañado durante todos estos años y que continúan guiando nuestro camino.',
+  'En La Casa del Panadero no solo vendemos maquinaria: construimos relaciones de confianza, brindamos soluciones y seguimos trabajando, como desde el primer día, para estar al lado de quienes hacen crecer esta gran industria.',
 ]
 
 const storyQuote =
-  '"No nos vendieron solo una maquina; nos dieron respaldo, experiencia y la tranquilidad de saber que siempre estan cuando los necesitamos."'
+  '"No nos vendieron solo una máquina; nos dieron respaldo, experiencia y la tranquilidad de saber que siempre están cuando los necesitamos."'
 
-const storySignoff = 'Ese es, y seguira siendo, nuestro mayor orgullo.'
+const storySignoff = 'Ese es, y seguirá siendo, nuestro mayor orgullo.'
 
 export default function Home() {
   return (
@@ -237,11 +243,11 @@ export default function Home() {
           <div className="payment-card">
             <p className="eyebrow">Showroom</p>
             <h3>Pagá hasta en 6 cuotas sin recargo</h3>
-            <p>Disponible en nuestro showroom para facilitar compras planificadas.</p>
+            <p>Disponible en nuestro showroom para facilitar compras planificadas y opciones de crédito italiano.</p>
           </div>
           <div className="payment-card">
             <p className="eyebrow">Formas de pago</p>
-            <h3>Contado, cheques, transferencia y tarjetas</h3>
+            <h3>Contado, cheques, transferencia, crédito italiano y tarjetas</h3>
             <p>Información clara y comercial para una web informativa orientada a consulta.</p>
           </div>
         </div>
@@ -258,35 +264,17 @@ export default function Home() {
           <div className="logo-grid desktop-only">
             {brands.map((brand) => (
               <div className="logo-card brand-logo-card" key={brand.name}>
-                <Image
-                  className="brand-logo-image"
-                  src={brand.src}
-                  alt={brand.name}
-                  width={brand.width}
-                  height={brand.height}
-                />
-              </div>
-            ))}
-          </div>
-          <div className="mobile-only">
-            <div className="logo-grid brand-grid-mobile-base">
-            {featuredBrands.map((brand) => (
-              <div className="logo-card brand-logo-card" key={brand.name}>
-                <Image
-                  className="brand-logo-image"
-                  src={brand.src}
-                  alt={brand.name}
-                  width={brand.width}
-                  height={brand.height}
-                />
-              </div>
-            ))}
-          </div>
-            <details className="mobile-expand-section">
-            <summary className="mobile-expand-toggle">Ver más</summary>
-              <div className="logo-grid mobile-expand-content">
-              {moreBrands.map((brand) => (
-                <div className="logo-card brand-logo-card" key={brand.name}>
+                {brand.href ? (
+                  <a href={brand.href} target="_blank" rel="noreferrer" aria-label={brand.name}>
+                    <Image
+                      className="brand-logo-image"
+                      src={brand.src}
+                      alt={brand.name}
+                      width={brand.width}
+                      height={brand.height}
+                    />
+                  </a>
+                ) : (
                   <Image
                     className="brand-logo-image"
                     src={brand.src}
@@ -294,8 +282,62 @@ export default function Home() {
                     width={brand.width}
                     height={brand.height}
                   />
+                )}
+              </div>
+            ))}
+          </div>
+          <div className="mobile-only">
+            <div className="logo-grid brand-grid-mobile-base">
+              {featuredBrands.map((brand) => (
+                <div className="logo-card brand-logo-card" key={brand.name}>
+                  {brand.href ? (
+                    <a href={brand.href} target="_blank" rel="noreferrer" aria-label={brand.name}>
+                      <Image
+                        className="brand-logo-image"
+                        src={brand.src}
+                        alt={brand.name}
+                        width={brand.width}
+                        height={brand.height}
+                      />
+                    </a>
+                  ) : (
+                    <Image
+                      className="brand-logo-image"
+                      src={brand.src}
+                      alt={brand.name}
+                      width={brand.width}
+                      height={brand.height}
+                    />
+                  )}
                 </div>
               ))}
+            </div>
+            <details className="mobile-expand-section">
+              <summary className="mobile-expand-toggle">Ver más</summary>
+              <div className="logo-grid mobile-expand-content">
+                {moreBrands.map((brand) => (
+                  <div className="logo-card brand-logo-card" key={brand.name}>
+                    {brand.href ? (
+                      <a href={brand.href} target="_blank" rel="noreferrer" aria-label={brand.name}>
+                        <Image
+                          className="brand-logo-image"
+                          src={brand.src}
+                          alt={brand.name}
+                          width={brand.width}
+                          height={brand.height}
+                        />
+                      </a>
+                    ) : (
+                      <Image
+                        className="brand-logo-image"
+                        src={brand.src}
+                        alt={brand.name}
+                        width={brand.width}
+                        height={brand.height}
+                      />
+                    )}
+                  </div>
+                ))}
               </div>
             </details>
           </div>
@@ -357,150 +399,26 @@ export default function Home() {
         <div className="container story-card">
           <p className="eyebrow">Nuestra historia</p>
           <h2>Más de 35 años acompañando el crecimiento de la panificación y la gastronomía</h2>
-          <p>
-            En La Casa del Panadero llevamos más de 35 años acompañando los sueños, desafíos y el
-            crecimiento de quienes apuestan cada día por el mundo de la panificación y la
-            gastronomía.
-          </p>
-          <p>
-            Nuestra historia comenzó en 1989, con una convicción muy clara: brindar soluciones
-            confiables y de calidad a través de la reparación de maquinaria industrial y
-            semiindustrial. Con esfuerzo, dedicación y una fuerte vocación de servicio, fuimos
-            dando nuestros primeros pasos fabricando equipos nacionales como sobadoras, orgullosos
-            de contribuir al desarrollo de la industria uruguaya.
-          </p>
-          <div className="story-full desktop-only">
-            <p>
-              La confianza de nuestros clientes fue el motor que impulsÃ³ nuestro crecimiento.
-              Gracias a ella, ampliamos nuestras fronteras, incorporamos nuevas tecnologÃ­as y
-              establecimos alianzas estratÃ©gicas con reconocidas marcas internacionales,
-              acercando al mercado local equipamiento de primer nivel.
-            </p>
-            <p>
-              Hoy somos una empresa consolidada y referente en el sector, especializada en la
-              comercializaciÃ³n, instalaciÃ³n y servicio tÃ©cnico de maquinaria para panaderÃ­as,
-              confiterÃ­as, supermercados, plantas industriales y emprendimientos gastronÃ³micos en
-              general. AdemÃ¡s, contamos con la representaciÃ³n de destacadas marcas del mundo,
-              entre ellas la prestigiosa firma italiana Bassanina, reconocida por su innovaciÃ³n y
-              excelencia.
-            </p>
-            <p>
-              Pero mÃ¡s allÃ¡ de los equipos que ofrecemos, creemos que nuestro mayor valor estÃ¡ en
-              las personas. En escuchar, asesorar y acompaÃ±ar a cada cliente como si su proyecto
-              fuera tambiÃ©n parte del nuestro. Porque entendemos que detrÃ¡s de cada panaderÃ­a,
-              confiterÃ­a, supermercado, panificadora y cada emprendimiento, hay historias de
-              trabajo, esfuerzo y sueÃ±os por cumplir.
-            </p>
-            <p>
-              La calidad, la atenciÃ³n personalizada, el compromiso y el respaldo tÃ©cnico han sido
-              los pilares que nos han acompaÃ±ado durante todos estos aÃ±os y que continÃºan guiando
-              nuestro camino.
-            </p>
-            <p>
-              En La Casa del Panadero no solo vendemos maquinaria: construimos relaciones de
-              confianza, brindamos soluciones y seguimos trabajando, como desde el primer dÃ­a,
-              para estar al lado de quienes hacen crecer esta gran industria.
-            </p>
-            <blockquote className="story-quote">
-              â€œNo nos vendieron solo una mÃ¡quina; nos dieron respaldo, experiencia y la
-              tranquilidad de saber que siempre estÃ¡n cuando los necesitamos.â€
-            </blockquote>
-            <p className="story-signoff">Ese es, y seguirÃ¡ siendo, nuestro mayor orgullo.</p>
-          </div>
-          <div className="story-desktop-copy desktop-only legacy-story-desktop">
-            <p>
-              La confianza de nuestros clientes fue el motor que impulsó nuestro crecimiento.
-              Gracias a ella, ampliamos nuestras fronteras, incorporamos nuevas tecnologías y
-              establecimos alianzas estratégicas con reconocidas marcas internacionales,
-              acercando al mercado local equipamiento de primer nivel.
-            </p>
-            <p>
-              Hoy somos una empresa consolidada y referente en el sector, especializada en la
-              comercialización, instalación y servicio técnico de maquinaria para panaderías,
-              confiterías, supermercados, plantas industriales y emprendimientos gastronómicos en
-              general. Además, contamos con la representación de destacadas marcas del mundo,
-              entre ellas la prestigiosa firma italiana Bassanina, reconocida por su innovación y
-              excelencia.
-            </p>
-            <p>
-              Pero más allá de los equipos que ofrecemos, creemos que nuestro mayor valor está en
-              las personas. En escuchar, asesorar y acompañar a cada cliente como si su proyecto
-              fuera también parte del nuestro. Porque entendemos que detrás de cada panadería,
-              confitería, supermercado, panificadora y cada emprendimiento, hay historias de
-              trabajo, esfuerzo y sueños por cumplir.
-            </p>
-            <p>
-              La calidad, la atención personalizada, el compromiso y el respaldo técnico han sido
-              los pilares que nos han acompañado durante todos estos años y que continúan guiando
-              nuestro camino.
-            </p>
-            <p>
-              En La Casa del Panadero no solo vendemos maquinaria: construimos relaciones de
-              confianza, brindamos soluciones y seguimos trabajando, como desde el primer día,
-              para estar al lado de quienes hacen crecer esta gran industria.
-            </p>
-            <blockquote className="story-quote">
-              “No nos vendieron solo una máquina; nos dieron respaldo, experiencia y la
-              tranquilidad de saber que siempre están cuando los necesitamos.”
-            </blockquote>
-            <p className="story-signoff">Ese es, y seguirá siendo, nuestro mayor orgullo.</p>
-          </div>
-          <div className="story-clean-copy desktop-only">
+          {storyIntro.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+
+          <div className="desktop-only">
             {storyBody.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
             <blockquote className="story-quote">{storyQuote}</blockquote>
             <p className="story-signoff">{storySignoff}</p>
           </div>
-          <details className="mobile-expand-section story-mobile-copy mobile-only">
-            <summary className="mobile-expand-toggle">Leer mas</summary>
+
+          <details className="mobile-expand-section story-more mobile-only">
+            <summary className="mobile-expand-toggle">Ver más</summary>
             <div className="mobile-expand-content">
               {storyBody.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
               <blockquote className="story-quote">{storyQuote}</blockquote>
               <p className="story-signoff">{storySignoff}</p>
-            </div>
-          </details>
-          <details className="mobile-expand-section story-more mobile-only legacy-story-mobile">
-            <summary className="mobile-expand-toggle">Leer más</summary>
-            <div className="mobile-expand-content">
-              <p>
-                La confianza de nuestros clientes fue el motor que impulsó nuestro crecimiento.
-                Gracias a ella, ampliamos nuestras fronteras, incorporamos nuevas tecnologías y
-                establecimos alianzas estratégicas con reconocidas marcas internacionales,
-                acercando al mercado local equipamiento de primer nivel.
-              </p>
-              <p>
-                Hoy somos una empresa consolidada y referente en el sector, especializada en la
-                comercialización, instalación y servicio técnico de maquinaria para panaderías,
-                confiterías, supermercados, plantas industriales y emprendimientos gastronómicos en
-                general. Además, contamos con la representación de destacadas marcas del mundo,
-                entre ellas la prestigiosa firma italiana Bassanina, reconocida por su innovación y
-                excelencia.
-              </p>
-              <p>
-                Pero más allá de los equipos que ofrecemos, creemos que nuestro mayor valor está en
-                las personas. En escuchar, asesorar y acompañar a cada cliente como si su proyecto
-                fuera también parte del nuestro. Porque entendemos que detrás de cada panadería,
-                confitería, supermercado, panificadora y cada emprendimiento, hay historias de
-                trabajo, esfuerzo y sueños por cumplir.
-              </p>
-              <p>
-                La calidad, la atención personalizada, el compromiso y el respaldo técnico han sido
-                los pilares que nos han acompañado durante todos estos años y que continúan guiando
-                nuestro camino.
-              </p>
-              <p>
-                En La Casa del Panadero no solo vendemos maquinaria: construimos relaciones de
-                confianza, brindamos soluciones y seguimos trabajando, como desde el primer día,
-                para estar al lado de quienes hacen crecer esta gran industria.
-              </p>
-              <blockquote className="story-quote">
-                “No nos vendieron solo una máquina; nos dieron respaldo, experiencia y la
-                tranquilidad de saber que siempre están cuando los necesitamos.”
-              </blockquote>
-              <p className="story-signoff">Ese es, y seguirá siendo, nuestro mayor orgullo.</p>
             </div>
           </details>
         </div>
@@ -568,12 +486,65 @@ export default function Home() {
 
       <footer className="footer">
         <div className="container footer-grid">
-          <div>
+          <div className="footer-intro">
             <strong>La Casa del Panadero</strong>
             <p>Equipamiento, productos de cuadra y servicio técnico para negocios del rubro.</p>
+            <p>Ventas, showroom, taller propio y acompañamiento postventa en un mismo lugar.</p>
           </div>
-          <div>
-            <p>Contado · Cheques · Transferencia bancaria · Tarjetas hasta en 6 pagos sin recargo</p>
+
+          <div className="footer-location-card">
+            <h3>Showroom</h3>
+            <p>
+              <MapPin size={17} /> Fernández Crespo 2099, Montevideo
+            </p>
+            <p>
+              <Phone size={17} /> 2924 8307
+            </p>
+            <p>
+              <Mail size={17} /> info@lacasadelpanadero.com.uy
+            </p>
+            <p>
+              <Clock3 size={17} /> Lunes a viernes de 8 a 17 hs
+            </p>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Fernandez+Crespo+2099+Montevideo"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Cómo llegar al showroom
+            </a>
+          </div>
+
+          <div className="footer-location-card">
+            <h3>Taller</h3>
+            <p>
+              <MapPin size={17} /> Jorge Isaacs 3831, Montevideo
+            </p>
+            <p>
+              <Phone size={17} /> 2215 5207
+            </p>
+            <p>
+              <Phone size={17} /> 091 319 531
+            </p>
+            <p>
+              <Mail size={17} /> info@lacasadelpanadero.com.uy
+            </p>
+            <p>
+              <Clock3 size={17} /> Lunes a viernes de 8 a 17 hs
+            </p>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Jorge+Isaacs+3831+Montevideo"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Cómo llegar al taller
+            </a>
+          </div>
+
+          <div className="footer-payments">
+            <h3>Información útil</h3>
+            <p>Contado · Cheques · Transferencia bancaria · Crédito italiano · Tarjetas hasta en 6 pagos sin recargo</p>
+            <p>También podés escribirnos por WhatsApp para ventas o asistencia técnica.</p>
           </div>
         </div>
       </footer>
