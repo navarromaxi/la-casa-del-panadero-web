@@ -374,8 +374,11 @@ export default function Home() {
               continuidad operativa a sus clientes y resolver incidencias con contexto real del
               rubro.
             </p>
-            <a className="btn btn-primary" href="https://wa.me/59891319531" target="_blank" rel="noreferrer">
-              <MessageCircle size={18} /> Contactar asistencia técnica
+            <a className="btn btn-outline service-contact-btn" href="https://wa.me/59891319531" target="_blank" rel="noreferrer">
+              <span className="service-whatsapp-icon">
+                <MessageCircle size={18} />
+              </span>
+              Contactar asistencia técnica
             </a>
           </div>
 

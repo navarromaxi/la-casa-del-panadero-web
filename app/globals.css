@@ -26,10 +26,7 @@ body {
   font-family: var(--font-body), sans-serif;
   text-transform: uppercase;
   color: var(--ink);
-  background:
-    radial-gradient(circle at top left, rgba(255, 255, 255, 0.72), transparent 24%),
-    radial-gradient(circle at top right, rgba(194, 201, 209, 0.32), transparent 30%),
-    linear-gradient(180deg, #f4f6f8 0%, #dfe4e8 48%, #d5dbe0 100%);
+  background: linear-gradient(180deg, #aeb8c1 0%, #d1d8de 40%, #eef2f5 100%);
   background-attachment: fixed;
 }
 
@@ -859,6 +856,24 @@ h3,
   height: 140px;
   border-radius: 999px;
   background: rgba(143, 153, 163, 0.14);
+}
+
+.service-whatsapp-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #1fa855, #25d366);
+  color: #fff;
+}
+
+.service-contact-btn {
+  border-color: rgba(31, 168, 85, 0.34);
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--ink);
+  box-shadow: none;
 }
 
 .service-step {
