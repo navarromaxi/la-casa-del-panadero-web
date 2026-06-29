@@ -99,6 +99,36 @@ const showcaseItems = [
   },
 ]
 
+const clients = [
+  'Disco',
+  'Devoto',
+  'Geant',
+  'Macro Mercado',
+  'Tienda Inglesa',
+  'El Dorado',
+  'Tamisur',
+  'Don Pepe',
+  'Los 33',
+  'Betina',
+  'Conf. Las Gaviotas',
+  'Delibest',
+  'Juanitos',
+  'Goddard',
+  'El Naranjo',
+  'La Triguena',
+  'De la Tierra',
+  'La Nueva Barcelonesa',
+  'Panif. Amsterdam',
+  'La Mallorquina',
+  'Montevideo Bakery',
+  'Puerto Sabor',
+  'La Buena',
+  'Emporio de los sandwiches',
+  'Agua Helada',
+  'Panif. Guadalupe',
+  'Empanadas Carolina',
+]
+
 const storyIntro = [
   'En La Casa del Panadero llevamos más de 35 años acompañando los sueños, desafíos y el crecimiento de quienes apuestan cada día por el mundo de la panificación y la gastronomía.',
   'Nuestra historia comenzó en 1989, con una convicción muy clara: brindar soluciones confiables y de calidad a través de la reparación de maquinaria industrial y semiindustrial. Con esfuerzo, dedicación y una fuerte vocación de servicio, fuimos dando nuestros primeros pasos fabricando equipos nacionales como sobadoras, orgullosos de contribuir al desarrollo de la industria uruguaya.',
@@ -360,6 +390,24 @@ export default function Home() {
                 <p className="showcase-detail">{item.text}</p>
               </details>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="clients-strip-section">
+        <div className="container clients-strip-shell">
+          <div className="clients-strip-heading">
+            <p className="eyebrow">Clientes</p>
+            <h2>Empresas que confiaron en nuestro trabajo</h2>
+          </div>
+          <div className="clients-strip" aria-label="Algunos de nuestros clientes">
+            <div className="clients-strip-track">
+              {[...clients, ...clients].map((client, index) => (
+                <span className="client-pill" key={`${client}-${index}`}>
+                  {client}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </section>
