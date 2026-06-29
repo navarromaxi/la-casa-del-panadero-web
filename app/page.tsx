@@ -15,6 +15,7 @@ import {
 import type { ReactNode } from 'react'
 import Image from 'next/image'
 import { ContactForm } from './contact-form'
+import { HomeBestSellersCarousel } from './home-best-sellers-carousel'
 import { getCategoryHref, salesWhatsAppUrl, topLevelProductCategories } from './products-data'
 
 const brands = [
@@ -174,6 +175,9 @@ export default function Home() {
       </section>
 
       <section id="inicio" className="hero">
+        <div className="container hero-top-carousel">
+          <HomeBestSellersCarousel />
+        </div>
         <div className="container hero-grid">
           <div className="hero-copy">
             <p className="eyebrow">Equipamiento para panaderías, confiterías y gastronomía</p>
