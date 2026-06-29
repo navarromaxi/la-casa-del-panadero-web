@@ -154,25 +154,6 @@ const extraHomeCategories = topLevelProductCategories.slice(6)
 export default function Home() {
   return (
     <main>
-      <section className="mobile-spotlight">
-        <div className="container">
-          <div className="mobile-spotlight-card">
-            <div className="mobile-spotlight-copy">
-              <p className="eyebrow">La Casa del Panadero</p>
-              <h2>Lo que vos necesitás</h2>
-              <p>Maquinaria, respaldo técnico y asesoramiento para mover tu producción.</p>
-            </div>
-            <Image
-              src="/utensilio-grupo-croissant-recorte.png"
-              alt="Maquinaria para panadería"
-              width={900}
-              height={900}
-              className="mobile-spotlight-image"
-              priority
-            />
-          </div>
-        </div>
-      </section>
 
       <section id="inicio" className="hero">
         <div className="container hero-top-carousel">

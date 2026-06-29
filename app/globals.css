@@ -2102,10 +2102,6 @@ h3,
     color: var(--accent-dark) !important;
   }
 
-  .mobile-whatsapp {
-    margin-top: 8px;
-  }
-
   .mobile-social-row {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2113,18 +2109,27 @@ h3,
     margin-top: 10px;
   }
 
-  .mobile-social-row a {
+  .mobile-social-link {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
     min-height: 46px;
     padding: 10px 12px;
-    border: 1px solid var(--line);
+    border: 1px solid transparent;
     border-radius: 14px;
-    background: rgba(255, 255, 255, 0.8);
-    color: var(--ink);
+    color: #fff;
     font-weight: 800;
+  }
+
+  .mobile-social-instagram {
+    background: linear-gradient(135deg, #833ab4, #fd1d1d 55%, #fcb045);
+    box-shadow: 0 12px 24px rgba(131, 58, 180, 0.22);
+  }
+
+  .mobile-social-whatsapp {
+    background: linear-gradient(135deg, #1fa855, #25d366);
+    box-shadow: 0 12px 24px rgba(31, 168, 85, 0.24);
   }
 
   .brand-grid-mobile-base {

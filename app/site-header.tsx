@@ -314,18 +314,27 @@ export function SiteHeader() {
                 Contacto
               </a>
               <div className="mobile-social-row">
-                <a href={INSTAGRAM_URL} target="_blank" rel="noreferrer" aria-label="Instagram">
+                <a
+                  className="mobile-social-link mobile-social-instagram"
+                  href={INSTAGRAM_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Instagram"
+                >
                   <InstagramGlyph size={18} />
                   Instagram
                 </a>
-                <a href={salesWhatsAppUrl} target="_blank" rel="noreferrer" aria-label="WhatsApp">
+                <a
+                  className="mobile-social-link mobile-social-whatsapp"
+                  href={salesWhatsAppUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="WhatsApp"
+                >
                   <WhatsAppGlyph size={18} />
                   WhatsApp
                 </a>
               </div>
-              <a className="btn btn-dark mobile-whatsapp" href={salesWhatsAppUrl} target="_blank" rel="noreferrer">
-                WhatsApp ventas
-              </a>
             </div>
           </div>
         ) : null}
