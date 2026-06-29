@@ -12,9 +12,10 @@ import {
   Truck,
   Wrench,
 } from 'lucide-react'
+import type { ReactNode } from 'react'
 import Image from 'next/image'
 import { ContactForm } from './contact-form'
-import { topLevelProductCategories } from './products-data'
+import { getCategoryHref, salesWhatsAppUrl, topLevelProductCategories } from './products-data'
 
 const brands = [
   { name: 'Bassanina Baking', src: '/bassanina-baking.png', width: 210, height: 84, href: 'https://www.bassanina.com/en-us/' },
@@ -115,7 +116,7 @@ const clients = [
   'Juanitos',
   'Goddard',
   'El Naranjo',
-  'La Triguena',
+  'La Trigueña',
   'De la Tierra',
   'La Nueva Barcelonesa',
   'Panif. Amsterdam',
@@ -146,6 +147,8 @@ const storyQuote =
   '"No nos vendieron solo una máquina; nos dieron respaldo, experiencia y la tranquilidad de saber que siempre están cuando los necesitamos."'
 
 const storySignoff = 'Ese es, y seguirá siendo, nuestro mayor orgullo.'
+const featuredHomeCategories = topLevelProductCategories.slice(0, 6)
+const extraHomeCategories = topLevelProductCategories.slice(6)
 
 export default function Home() {
   return (
@@ -185,7 +188,7 @@ export default function Home() {
               <span>Service técnico</span>
             </div>
             <div className="hero-actions">
-              <a className="btn btn-primary" href="https://wa.me/59894009370" target="_blank" rel="noreferrer">
+              <a className="btn btn-primary" href={salesWhatsAppUrl} target="_blank" rel="noreferrer">
                 Consultar por ventas <ArrowRight size={18} />
               </a>
               <a className="btn btn-outline" href="#productos">
@@ -250,22 +253,57 @@ export default function Home() {
           <p className="eyebrow">Productos de cuadra</p>
           <h2>Categorías de equipamiento para ordenar la búsqueda desde el primer vistazo</h2>
           <p className="products-section-copy">
-            Seleccionamos las líneas principales para que la navegación sea clara desde el comienzo.
-            Cada categoría abre una página propia, lista para sumar productos, marcas y consultas a
-            medida.
+            Reordenamos el menú para que cada familia de equipos tenga su lugar. Algunas categorías
+            ya abren su propia landing y otras derivan directo a consulta cuando conviene asesorar
+            antes de mostrar opciones.
           </p>
         </div>
         <div className="container product-grid">
-          {topLevelProductCategories.map((product) => (
-            <a className="product-card" key={product.slug} id={product.slug} href={`/productos/${product.slug}`}>
+          {featuredHomeCategories.map((product) => (
+            <a
+              className="product-card"
+              key={product.slug}
+              id={product.slug}
+              href={getCategoryHref(product)}
+              target={product.external ? '_blank' : undefined}
+              rel={product.external ? 'noreferrer' : undefined}
+            >
               <div>
                 <span>{product.name}</span>
                 <small>{product.summary}</small>
               </div>
-              <span className="product-card-link">Ver categoría</span>
+              <span className="product-card-link">{product.ctaLabel ?? 'Ver categoría'}</span>
             </a>
           ))}
         </div>
+        {extraHomeCategories.length ? (
+          <div className="container">
+            <details className="mobile-expand-section products-expand">
+              <summary className="mobile-expand-toggle products-expand-toggle">
+                <span className="products-expand-label-more">Ver más categorías</span>
+                <span className="products-expand-label-less">Ver menos categorías</span>
+              </summary>
+              <div className="product-grid mobile-expand-content products-expand-content">
+                {extraHomeCategories.map((product) => (
+                  <a
+                    className="product-card"
+                    key={product.slug}
+                    id={product.slug}
+                    href={getCategoryHref(product)}
+                    target={product.external ? '_blank' : undefined}
+                    rel={product.external ? 'noreferrer' : undefined}
+                  >
+                    <div>
+                      <span>{product.name}</span>
+                      <small>{product.summary}</small>
+                    </div>
+                    <span className="product-card-link">{product.ctaLabel ?? 'Ver categoría'}</span>
+                  </a>
+                ))}
+              </div>
+            </details>
+          </div>
+        ) : null}
       </section>
 
       <section className="section payment-strip">
@@ -500,11 +538,10 @@ export default function Home() {
             <p className="eyebrow">Pedir presupuesto</p>
             <h2>Dejanos tu consulta y te respondemos a la brevedad</h2>
             <p>
-              También podés contactarnos directamente por WhatsApp para ventas o asistencia
-              técnica.
+              También podés contactarnos directamente por WhatsApp para ventas o asistencia técnica.
             </p>
             <div className="contact-buttons">
-              <a className="btn btn-primary" href="https://wa.me/59894009370" target="_blank" rel="noreferrer">
+              <a className="btn btn-primary" href={salesWhatsAppUrl} target="_blank" rel="noreferrer">
                 WhatsApp ventas
               </a>
               <a className="btn btn-outline" href="https://wa.me/59891319531" target="_blank" rel="noreferrer">
@@ -603,7 +640,7 @@ export default function Home() {
   )
 }
 
-function Feature({ icon, title, text }: { icon: React.ReactNode; title: string; text: string }) {
+function Feature({ icon, title, text }: { icon: ReactNode; title: string; text: string }) {
   return (
     <div className="feature-card">
       {icon}

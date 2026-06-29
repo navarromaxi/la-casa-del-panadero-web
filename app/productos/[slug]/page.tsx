@@ -1,14 +1,14 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowLeft, ChevronRight, MessageCircle } from 'lucide-react'
 import {
   categoryDetails,
+  getCategoryHref,
+  isBrowsableCategory,
   productCategories,
   productCategoryChildren,
-  utensiliosGalleryItems,
+  salesWhatsAppUrl,
 } from '../../products-data'
-import { UtensiliosCarousel } from '../../utensilios-carousel'
 
 type ProductPageProps = {
   params: Promise<{
@@ -16,8 +16,14 @@ type ProductPageProps = {
   }>
 }
 
+const fallbackBullets = [
+  'Asesoramiento comercial según producción, espacio y necesidad operativa.',
+  'Base preparada para sumar modelos, marcas y fichas técnicas.',
+  'Consulta directa para avanzar con una propuesta concreta.',
+]
+
 export async function generateStaticParams() {
-  return productCategories.map((category) => ({ slug: category.slug }))
+  return productCategories.filter(isBrowsableCategory).map((category) => ({ slug: category.slug }))
 }
 
 export async function generateMetadata({ params }: ProductPageProps): Promise<Metadata> {
@@ -40,15 +46,12 @@ export default async function ProductCategoryPage({ params }: ProductPageProps) 
   const { slug } = await params
   const category = productCategories.find((item) => item.slug === slug)
 
-  if (!category) {
+  if (!category || !isBrowsableCategory(category)) {
     return null
   }
 
   const details = categoryDetails[slug]
-  const featuredProduct = details?.featuredProduct
-  const featuredProducts = details?.featuredProducts ?? []
-  const childCategories = productCategoryChildren[slug] ?? []
-  const isUtensilios = slug === 'utensilios'
+  const childCategories = (productCategoryChildren[slug] ?? []).filter(isBrowsableCategory)
 
   return (
     <main className="category-page">
@@ -64,229 +67,75 @@ export default async function ProductCategoryPage({ params }: ProductPageProps) 
         </div>
       </section>
 
-      {isUtensilios ? (
-        <>
-          <section className="section">
-            <div className="container">
-              <UtensiliosCarousel items={utensiliosGalleryItems} />
-            </div>
-          </section>
-
-          <section className="section alt">
-            <div className="container utensilios-info-card">
-              <p className="eyebrow">Utensilios</p>
-              <h2>Accesorios y herramientas para el trabajo diario del obrador</h2>
-              <p>
-                En esta categoría reunimos utensilios de apoyo para panadería, confitería y
-                gastronomía. No listamos cada producto en la web, porque la variedad puede cambiar,
-                pero podés consultarnos directamente por el utensilio que necesitás y te orientamos
-                según uso, disponibilidad y tipo de trabajo.
-              </p>
-              <a
-                className="btn btn-primary"
-                href="https://wa.me/59894009370"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <MessageCircle size={18} /> Consultar por utensilios
-              </a>
-            </div>
-          </section>
-        </>
-      ) : (
-        <section className="section">
-          <div className="container category-grid">
-            <div className="category-copy">
-              <p className="eyebrow">Descripción general</p>
-              <h2>{category.name} para producción profesional</h2>
-              <p>{details.intro}</p>
-            </div>
-
-            <div className="category-panel">
-              <p className="eyebrow">Consulta comercial</p>
-              <h3>Te asesoramos según tu producción</h3>
-              <p>
-                Si querés conocer disponibilidad, capacidades o precio, podés escribirnos y te
-                orientamos según el tipo de masa, volumen y espacio de trabajo.
-              </p>
-              <ul>
-                <li>Ventas por WhatsApp</li>
-                <li>Asesoramiento para elegir capacidad</li>
-                <li>Coordinación de presupuesto</li>
-              </ul>
-              <a
-                className="btn btn-primary"
-                href="https://wa.me/59894009370"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <MessageCircle size={18} /> Consultar este producto
-              </a>
-            </div>
-          </div>
-        </section>
-      )}
-
-      {!isUtensilios && featuredProduct ? (
-        <section className="section alt">
-          <div className="container product-detail-layout">
-            <div className="product-visual-card">
-              <div className="product-image-frame">
-                <Image
-                  src={featuredProduct.image}
-                  alt={featuredProduct.imageAlt}
-                  width={1280}
-                  height={1707}
-                  className="product-main-image"
-                  priority
-                />
-              </div>
-            </div>
-
-            <div className="product-detail-copy">
-              {featuredProduct.badge ? <p className="eyebrow">{featuredProduct.badge}</p> : null}
-              <h2>
-                {featuredProduct.brand} {featuredProduct.model}
-              </h2>
-              <p className="product-model-line">{featuredProduct.name}</p>
-              <p>{featuredProduct.shortDescription}</p>
-
-              {featuredProduct.capacities?.length ? (
-                <div className="product-capacities">
-                  {featuredProduct.capacities.map((capacity) => (
-                    <span key={capacity}>{capacity}</span>
-                  ))}
-                </div>
-              ) : null}
-
-              <div className="product-feature-list">
-                {featuredProduct.highlights.map((highlight) => (
-                  <div className="product-feature-item" key={highlight}>
-                    <span />
-                    <p>{highlight}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
+      <section className="section">
+        <div className="container category-grid">
+          <div className="category-copy">
+            <p className="eyebrow">Descripción general</p>
+            <h2>{category.name} para producción profesional</h2>
+            <p>{details?.intro ?? category.summary}</p>
+            {details?.note ? <p>{details.note}</p> : null}
           </div>
 
-          <div className="container product-description-grid">
-            <div className="product-description-card">
-              <p className="eyebrow">Ficha traducida</p>
-              <h3>Resumen del equipo</h3>
-              {featuredProduct.description.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
+          <div className="category-panel">
+            <p className="eyebrow">Consulta comercial</p>
+            <h3>Te asesoramos según tu producción</h3>
+            <p>
+              Si querés conocer disponibilidad, capacidades o alternativas dentro de esta categoría,
+              escribinos y te orientamos según tu necesidad real.
+            </p>
+            <ul>
+              {(details?.bullets ?? fallbackBullets).map((item) => (
+                <li key={item}>{item}</li>
               ))}
-            </div>
-
-            <div className="product-description-card">
-              <p className="eyebrow">{featuredProduct.specsTitle ?? 'Características'}</p>
-              <h3>Datos principales</h3>
-              <ul className="product-spec-list">
-                {featuredProduct.specs.map((spec) => (
-                  <li key={spec}>{spec}</li>
-                ))}
-              </ul>
-
-              <p className="eyebrow secondary-eyebrow">{featuredProduct.notesTitle ?? 'Aplicaciones'}</p>
-              <ul className="product-spec-list">
-                {featuredProduct.notes.map((note) => (
-                  <li key={note}>{note}</li>
-                ))}
-              </ul>
-            </div>
+            </ul>
+            <a className="btn btn-primary" href={salesWhatsAppUrl} target="_blank" rel="noreferrer">
+              <MessageCircle size={18} /> Consultar esta categoría
+            </a>
           </div>
-        </section>
-      ) : null}
+        </div>
+      </section>
 
-      {!isUtensilios && !featuredProduct && featuredProducts.length ? (
+      <section className="section alt">
+        <div className="container product-description-grid">
+          <div className="product-description-card">
+            <p className="eyebrow">Cómo lo trabajamos</p>
+            <h3>Una landing simple, clara y lista para crecer</h3>
+            <p>
+              Dejamos esta categoría con una estructura limpia para poder sumar después modelos,
+              marcas, fichas, fotos y comparativas sin volver a reorganizar toda la navegación.
+            </p>
+            <p>
+              De esta forma ya queda publicada la categoría dentro del menú y también una base
+              ordenada para avanzar con el contenido definitivo.
+            </p>
+          </div>
+
+          <div className="product-description-card">
+            <p className="eyebrow">Siguiente paso</p>
+            <h3>Completamos la ficha según prioridad comercial</h3>
+            <ul className="product-spec-list">
+              <li>Agregar marcas o modelos destacados.</li>
+              <li>Sumar fichas técnicas y aplicaciones reales.</li>
+              <li>Incorporar fotos cuando definamos el material visual.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {childCategories.length ? (
         <section className="section alt">
           <div className="container">
-            <p className="eyebrow">Modelos disponibles</p>
-            <h2>Líneas destacadas dentro de esta categoría</h2>
-            <div className="multi-product-grid">
-              {featuredProducts.map((product) => (
-                <article className="multi-product-card" key={`${product.brand}-${product.model}`}>
-                  <div className="multi-product-image-frame">
-                    <Image
-                      src={product.image}
-                      alt={product.imageAlt}
-                      width={1200}
-                      height={900}
-                      className="multi-product-image"
-                    />
-                  </div>
-
-                  <div className="multi-product-copy">
-                    {product.badge ? <p className="eyebrow">{product.badge}</p> : null}
-                    <h3>
-                      {product.brand} {product.model}
-                    </h3>
-                    <p className="product-model-line">{product.name}</p>
-                    <p>{product.shortDescription}</p>
-
-                    {product.capacities?.length ? (
-                      <div className="product-capacities">
-                        {product.capacities.map((capacity) => (
-                          <span key={capacity}>{capacity}</span>
-                        ))}
-                      </div>
-                    ) : null}
-
-                    <div className="product-feature-list">
-                      {product.highlights.map((highlight) => (
-                        <div className="product-feature-item" key={highlight}>
-                          <span />
-                          <p>{highlight}</p>
-                        </div>
-                      ))}
-                    </div>
-
-                    <div className="multi-product-text-block">
-                      {product.description.map((paragraph) => (
-                        <p key={paragraph}>{paragraph}</p>
-                      ))}
-                    </div>
-
-                    <div className="multi-product-text-block">
-                      <p className="eyebrow">{product.specsTitle ?? 'Características principales'}</p>
-                      <ul className="product-spec-list">
-                        {product.specs.map((spec) => (
-                          <li key={spec}>{spec}</li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    <div className="multi-product-text-block">
-                      <p className="eyebrow secondary-eyebrow">{product.notesTitle ?? 'Aplicaciones'}</p>
-                      <ul className="product-spec-list">
-                        {product.notes.map((note) => (
-                          <li key={note}>{note}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-      ) : null}
-
-      {!isUtensilios && childCategories.length ? (
-        <section className="section alt">
-          <div className="container">
-            <p className="eyebrow">Accesos rápidos</p>
-            <h2>Explorá las líneas de maquinaria especial</h2>
+            <p className="eyebrow">Subcategorías</p>
+            <h2>Explorá las líneas disponibles dentro de {category.name.toLowerCase()}</h2>
             <div className="special-category-grid">
               {childCategories.map((child) => (
-                <Link className="special-category-card" key={child.slug} href={`/productos/${child.slug}`}>
+                <Link className="special-category-card" key={child.slug} href={getCategoryHref(child)}>
                   <div>
                     <span>{child.name}</span>
                     <small>{child.summary}</small>
                   </div>
                   <span className="special-category-link">
-                    Ver landing <ChevronRight size={16} />
+                    Ver categoría <ChevronRight size={16} />
                   </span>
                 </Link>
               ))}
